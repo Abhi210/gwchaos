@@ -1,0 +1,2949 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[    142622,       2941]
+NotebookOptionsPosition[    139582,       2884]
+NotebookOutlinePosition[    139979,       2900]
+CellTagsIndexPosition[    139936,       2897]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{"<<", "GeneralRelativityTensors`"}]], "Input",
+ CellChangeTimes->{{3.9205176937054243`*^9, 3.920517703748701*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"350ea5f9-a15e-4edd-a5fb-197a4e69aac2"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"gk", "=", " ", 
+  RowBox[{"ToMetric", "[", "\"\<Kerr\>\"", "]"}]}]], "Input",
+ CellChangeTimes->{{3.92051770659999*^9, 3.9205177131145782`*^9}},
+ CellLabel->"In[2]:=",ExpressionUUID->"11d4a345-9894-4077-8280-d8138f85ea2f"],
+
+Cell[BoxData[
+ TagBox[
+  SubsuperscriptBox["g", "\[Alpha]\[Beta]", ""],
+  DisplayForm]], "Output",
+ CellChangeTimes->{3.920517713592593*^9, 3.9205462213064327`*^9},
+ CellLabel->"Out[2]=",ExpressionUUID->"e311c2f3-84aa-4ff2-93a7-9c592d8343ba"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Rulll", "=", " ", 
+  RowBox[{"ShiftIndices", "[", 
+   RowBox[{
+    RowBox[{"RiemannTensor", "[", "gk", "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"\[Alpha]", ",", 
+      RowBox[{"-", "\[Beta]"}], ",", 
+      RowBox[{"-", "\[Rho]"}], ",", 
+      RowBox[{"-", "\[Gamma]"}]}], "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.9205177152364397`*^9, 3.920517740905394*^9}},
+ CellLabel->"In[3]:=",ExpressionUUID->"aa6b94d7-d133-4ece-b911-140bb73beb6b"],
+
+Cell[BoxData[
+ TagBox[
+  SubsuperscriptBox["R", 
+   RowBox[{"  ", "\[Beta]\[Rho]\[Gamma]"}], 
+   RowBox[{"\[Alpha]", "      "}]],
+  DisplayForm]], "Output",
+ CellChangeTimes->{3.920517742623829*^9},
+ CellLabel->"Out[3]=",ExpressionUUID->"b2996df4-6bd7-4268-87f8-41df9576367f"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"SRulll", "=", " ", 
+   RowBox[{
+    RowBox[{"TensorValues", "[", "Rulll", "]"}], "//", "FullSimplify"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.920517748488085*^9, 3.92051776202662*^9}, 
+   3.920517799949291*^9},
+ CellLabel->"In[6]:=",ExpressionUUID->"ac5302e4-2523-4692-83a2-363be130ba35"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"DSRulllr", "=", " ", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"D", "[", 
+      RowBox[{"SRulll", ",", "r"}], "]"}], "/.", 
+     RowBox[{"{", 
+      RowBox[{"\[Theta]", "->", "theta"}], "}"}]}], "//", "FullSimplify"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.920517764505602*^9, 3.920517810464061*^9}},
+ CellLabel->"In[8]:=",ExpressionUUID->"a6791243-7fbf-4260-b862-5d89a52ad4de"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"DSRullltheta", "=", " ", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"D", "[", 
+      RowBox[{"SRulll", ",", "\[Theta]"}], "]"}], "/.", 
+     RowBox[{"{", 
+      RowBox[{"\[Theta]", "->", "theta"}], "}"}]}], "//", "FullSimplify"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.92051780672885*^9, 3.920517844121965*^9}},
+ CellLabel->"In[9]:=",ExpressionUUID->"6b57e3d1-85fd-4da4-9d40-f821b92ae8d1"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"CDSRulll", "=", " ", 
+   RowBox[{"CForm", "[", "DSRulllr", "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.920517846332115*^9, 3.920517860201275*^9}},
+ CellLabel->"In[10]:=",ExpressionUUID->"1194a4a3-b37e-45a8-89bf-734b1bf53085"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"CopyToClipboard", "[", "CDSRulll", "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.920518117402567*^9, 3.9205181258105917`*^9}},
+ CellLabel->"In[11]:=",ExpressionUUID->"c10ad872-c16a-4f44-8a39-580117fef982"],
+
+Cell[BoxData["DSRulllr"], "Input",
+ CellChangeTimes->{{3.920518354103806*^9, 
+  3.920518354165484*^9}},ExpressionUUID->"248ad072-06b8-42e7-9d61-\
+0df9bba74185"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DSRulllr", "//", "MatrixForm"}]], "Input",
+ CellChangeTimes->{{3.920518472358038*^9, 3.9205184804497843`*^9}},
+ CellLabel->"In[12]:=",ExpressionUUID->"1f7fc6a2-9ef0-43d9-a411-36fd00ae86c3"],
+
+Cell[BoxData[
+ TemplateBox[<|"shortenedBoxes" -> TagBox[
+     TagBox[
+      RowBox[{"(", "\[NoBreak]", 
+        GridBox[{{
+           RowBox[{"(", "\[NoBreak]", 
+             GridBox[{{"0", "0", "0", 
+                RowBox[{"-", 
+                  FractionBox[
+                   RowBox[{"16", " ", "a", " ", 
+                    SuperscriptBox["M", "2"], " ", "r", " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"9", " ", 
+                    SuperscriptBox["a", "4"]}], "-", 
+                    RowBox[{"44", " ", 
+                    SuperscriptBox["a", "2"], " ", 
+                    SuperscriptBox["r", "2"]}], "+", 
+                    RowBox[{"16", " ", 
+                    SuperscriptBox["r", "4"]}], "+", 
+                    RowBox[{"4", " ", 
+                    SuperscriptBox["a", "2"], " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"3", " ", 
+                    SuperscriptBox["a", "2"]}], "-", 
+                    RowBox[{"11", " ", 
+                    SuperscriptBox["r", "2"]}]}], ")"}], " ", 
+                    RowBox[{"Cos", "[", 
+                    RowBox[{"2", " ", "theta"}], "]"}]}], "+", 
+                    RowBox[{"3", " ", 
+                    SuperscriptBox["a", "4"], " ", 
+                    RowBox[{"Cos", "[", 
+                    RowBox[{"4", " ", "theta"}], "]"}]}]}], ")"}], " ", 
+                    SuperscriptBox[
+                    RowBox[{"Sin", "[", "theta", "]"}], "2"]}], 
+                   SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{
+                    SuperscriptBox["a", "2"], "+", 
+                    RowBox[{"2", " ", 
+                    SuperscriptBox["r", "2"]}], "+", 
+                    RowBox[{
+                    SuperscriptBox["a", "2"], " ", 
+                    RowBox[{"Cos", "[", 
+                    RowBox[{"2", " ", "theta"}], "]"}]}]}], ")"}], "5"]]}]}, {
+               "0", "0", 
+                FractionBox[
+                 RowBox[{
+                   SuperscriptBox["a", "2"], " ", 
+                   SuperscriptBox["M", "2"], " ", 
+                   RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"5", " ", 
+                    SuperscriptBox["a", "6"]}], "-", 
+                    RowBox[{"117", " ", 
+                    SuperscriptBox["a", "4"], " ", 
+                    SuperscriptBox["r", "2"]}], "+", 
+                    RowBox[{"64", " ", 
+                    SuperscriptBox["a", "2"], " ", 
+                    SuperscriptBox["r", "3"], " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"3", " ", "M"}], "+", "r"}], ")"}]}], "+", 
+                    RowBox[{"48", " ", 
+                    SuperscriptBox["r", "5"], " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"-", "8"}], " ", "M"}], "+", 
+                    RowBox[{"5", " ", "r"}]}], ")"}]}]}], ")"}], " ", 
+                    RowBox[{"Sin", "[", 
+                    RowBox[{"2", " ", "theta"}], "]"}]}], "+", 
+                    TemplateBox[{"1"}, "OutputSizeLimit`Skeleton"], "+", 
+                    RowBox[{
+                    SuperscriptBox["a", "4"], " ", 
+                    TemplateBox[{"2"}, "OutputSizeLimit`Skeleton"], " ", 
+                    RowBox[{"Sin", "[", 
+                    RowBox[{"6", " ", "theta"}], "]"}]}]}], ")"}]}], 
+                 RowBox[{
+                   SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{
+                    SuperscriptBox["a", "2"], "+", 
+                    RowBox[{"r", " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    TemplateBox[{"1"}, "OutputSizeLimit`Skeleton"], "+", 
+                    "r"}], ")"}]}]}], ")"}], "2"], " ", 
+                   SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{
+                    SuperscriptBox["a", "2"], "+", 
+                    RowBox[{"2", " ", 
+                    SuperscriptBox["r", "2"]}], "+", 
+                    RowBox[{
+                    SuperscriptBox["a", "2"], " ", 
+                    RowBox[{"Cos", "[", 
+                    TemplateBox[{"1"}, "OutputSizeLimit`Skeleton"], "]"}]}]}],
+                     ")"}], "4"]}]], "0"}, {"0", 
+                FractionBox[
+                 RowBox[{
+                   SuperscriptBox["a", "2"], " ", 
+                   SuperscriptBox["M", "2"], " ", 
+                   RowBox[{"(", 
+                    TemplateBox[{"1"}, "OutputSizeLimit`Skeleton"], ")"}]}], 
+                 RowBox[{
+                   SuperscriptBox[
+                    RowBox[{"(", 
+                    TemplateBox[{"1"}, "OutputSizeLimit`Skeleton"], ")"}], 
+                    "2"], " ", 
+                   SuperscriptBox[
+                    TemplateBox[{"1"}, "OutputSizeLimit`Skeleton"], "4"]}]], 
+                "0", "0"}, {
+                FractionBox[
+                 TemplateBox[{"1"}, "OutputSizeLimit`Skeleton"], 
+                 SuperscriptBox[
+                  TemplateBox[{"1"}, "OutputSizeLimit`Skeleton"], "5"]], "0", 
+                "0", "0"}}, RowSpacings -> 1, ColumnSpacings -> 1, 
+              RowAlignments -> Baseline, ColumnAlignments -> Center], 
+             "\[NoBreak]", ")"}], 
+           RowBox[{"(", "\[NoBreak]", 
+             TemplateBox[{"1"}, "OutputSizeLimit`Skeleton"], "\[NoBreak]", 
+             ")"}], 
+           RowBox[{"(", "\[NoBreak]", 
+             TemplateBox[{"1"}, "OutputSizeLimit`Skeleton"], "\[NoBreak]", 
+             ")"}], 
+           RowBox[{"(", "\[NoBreak]", 
+             GridBox[{{"0", "0", "0", 
+                RowBox[{"-", 
+                  FractionBox[
+                   RowBox[{"M", " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"-", "30"}], " ", 
+                    SuperscriptBox["a", "8"]}], "-", 
+                    RowBox[{"32", " ", 
+                    SuperscriptBox["r", "8"]}], "+", 
+                    TemplateBox[{"4"}, "OutputSizeLimit`Skeleton"], "+", 
+                    RowBox[{"2", " ", 
+                    SuperscriptBox["a", "4"], " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"-", "9"}], " ", 
+                    SuperscriptBox["a", "4"]}], "+", 
+                    TemplateBox[{"1"}, "OutputSizeLimit`Skeleton"], "+", 
+                    RowBox[{"2", " ", 
+                    SuperscriptBox["r", "3"], " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    TemplateBox[{"1"}, "OutputSizeLimit`Skeleton"], "+", 
+                    TemplateBox[{"1"}, "OutputSizeLimit`Skeleton"]}], 
+                    ")"}]}]}], ")"}], " ", 
+                    RowBox[{"Cos", "[", 
+                    RowBox[{"4", " ", "theta"}], "]"}]}], "-", 
+                    RowBox[{"3", " ", 
+                    SuperscriptBox["a", "6"], " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    SuperscriptBox["a", "2"], "+", 
+                    RowBox[{"r", " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"-", "4"}], " ", "M"}], "+", 
+                    RowBox[{"3", " ", "r"}]}], ")"}]}]}], ")"}], " ", 
+                    RowBox[{"Cos", "[", 
+                    RowBox[{"6", " ", "theta"}], "]"}]}]}], ")"}], " ", 
+                    SuperscriptBox[
+                    RowBox[{"Sin", "[", "theta", "]"}], "2"]}], 
+                   SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{
+                    SuperscriptBox["a", "2"], "+", 
+                    RowBox[{"2", " ", 
+                    SuperscriptBox["r", "2"]}], "+", 
+                    RowBox[{
+                    SuperscriptBox["a", "2"], " ", 
+                    RowBox[{"Cos", "[", 
+                    RowBox[{"2", " ", "theta"}], "]"}]}]}], ")"}], "5"]]}]}, {
+               "0", "0", 
+                FractionBox[
+                 RowBox[{"a", " ", "M", " ", 
+                   RowBox[{"(", 
+                    TemplateBox[{"1"}, "OutputSizeLimit`Skeleton"], ")"}]}], 
+                 RowBox[{
+                   SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{
+                    SuperscriptBox["a", "2"], "+", 
+                    RowBox[{"r", " ", 
+                    TemplateBox[{"1"}, "OutputSizeLimit`Skeleton"]}]}], ")"}],
+                     "2"], " ", 
+                   SuperscriptBox[
+                    RowBox[{"(", 
+                    TemplateBox[{"1"}, "OutputSizeLimit`Skeleton"], ")"}], 
+                    "4"]}]], "0"}, {"0", 
+                FractionBox[
+                 RowBox[{"a", " ", "M", " ", 
+                   RowBox[{"(", 
+                    TemplateBox[{"1"}, "OutputSizeLimit`Skeleton"], ")"}]}], 
+                 RowBox[{
+                   SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{
+                    SuperscriptBox["a", "2"], "+", 
+                    TemplateBox[{"1"}, "OutputSizeLimit`Skeleton"]}], ")"}], 
+                    "2"], " ", 
+                   SuperscriptBox[
+                    TemplateBox[{"1"}, "OutputSizeLimit`Skeleton"], "4"]}]], 
+                "0", "0"}, {
+                FractionBox[
+                 RowBox[{"M", " ", 
+                   RowBox[{"(", 
+                    TemplateBox[{"1"}, "OutputSizeLimit`Skeleton"], ")"}], 
+                   " ", 
+                   SuperscriptBox[
+                    TemplateBox[{"1"}, "OutputSizeLimit`Skeleton"], "2"]}], 
+                 SuperscriptBox[
+                  RowBox[{"(", 
+                    TemplateBox[{"1"}, "OutputSizeLimit`Skeleton"], ")"}], 
+                  "5"]], "0", "0", "0"}}, RowSpacings -> 1, ColumnSpacings -> 
+              1, RowAlignments -> Baseline, ColumnAlignments -> Center], 
+             "\[NoBreak]", ")"}]}, {
+           RowBox[{"(", "\[NoBreak]", 
+             TemplateBox[{"1"}, "OutputSizeLimit`Skeleton"], "\[NoBreak]", 
+             ")"}], 
+           RowBox[{"(", "\[NoBreak]", 
+             
+             GridBox[{{"0", "0", "0", "0"}, {"0", "0", "0", "0"}, {
+               "0", "0", "0", "0"}, {"0", "0", "0", "0"}}, RowSpacings -> 1, 
+              ColumnSpacings -> 1, RowAlignments -> Baseline, 
+              ColumnAlignments -> Center], "\[NoBreak]", ")"}], 
+           RowBox[{"(", "\[NoBreak]", 
+             GridBox[{{"0", "0", "0", 
+                FractionBox[
+                 RowBox[{"a", " ", "M", " ", 
+                   RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"48", " ", 
+                    SuperscriptBox["r", "4"], " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"-", "3"}], " ", "M"}], "+", "r"}], ")"}]}], "+", 
+                    
+                    RowBox[{"16", " ", 
+                    SuperscriptBox["a", "2"], " ", 
+                    SuperscriptBox["r", "2"], " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"7", " ", "M"}], "+", 
+                    RowBox[{"2", " ", "r"}]}], ")"}]}], "-", 
+                    RowBox[{
+                    SuperscriptBox["a", "4"], " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"5", " ", "M"}], "+", 
+                    RowBox[{"43", " ", "r"}]}], ")"}]}]}], ")"}], " ", 
+                    RowBox[{"Sin", "[", 
+                    RowBox[{"2", " ", "theta"}], "]"}]}], "-", 
+                    RowBox[{"4", " ", 
+                    SuperscriptBox["a", "2"], " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    TemplateBox[{"1"}, "OutputSizeLimit`Skeleton"], "+", 
+                    TemplateBox[{"1"}, "OutputSizeLimit`Skeleton"]}], ")"}], 
+                    " ", 
+                    RowBox[{"Sin", "[", 
+                    RowBox[{"4", " ", "theta"}], "]"}]}], "+", 
+                    RowBox[{
+                    SuperscriptBox["a", "4"], " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"-", "M"}], "+", "r"}], ")"}], " ", 
+                    RowBox[{"Sin", "[", 
+                    RowBox[{"6", " ", "theta"}], "]"}]}]}], ")"}]}], 
+                 SuperscriptBox[
+                  RowBox[{"(", 
+                    RowBox[{
+                    SuperscriptBox["a", "2"], "+", 
+                    RowBox[{"2", " ", 
+                    SuperscriptBox["r", "2"]}], "+", 
+                    RowBox[{
+                    SuperscriptBox["a", "2"], " ", 
+                    RowBox[{"Cos", "[", 
+                    RowBox[{"2", " ", "theta"}], "]"}]}]}], ")"}], "4"]]}, {
+               "0", "0", 
+                FractionBox[
+                 RowBox[{"M", " ", 
+                   RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"9", " ", 
+                    SuperscriptBox["a", "4"]}], "-", 
+                    RowBox[{"48", " ", 
+                    SuperscriptBox["a", "2"], " ", 
+                    SuperscriptBox["r", "2"]}], "+", 
+                    RowBox[{"8", " ", 
+                    TemplateBox[{"1"}, "OutputSizeLimit`Skeleton"]}], "+", 
+                    TemplateBox[{"1"}, "OutputSizeLimit`Skeleton"], "+", 
+                    RowBox[{"3", " ", 
+                    SuperscriptBox["a", "4"], " ", 
+                    RowBox[{"Cos", "[", 
+                    RowBox[{"4", " ", "theta"}], "]"}]}]}], ")"}]}], 
+                 RowBox[{"8", " ", 
+                   SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{
+                    SuperscriptBox["r", "2"], "+", 
+                    TemplateBox[{"1"}, "OutputSizeLimit`Skeleton"]}], ")"}], 
+                    "3"]}]], "0"}, {"0", 
+                RowBox[{"-", 
+                  FractionBox[
+                   RowBox[{"M", " ", 
+                    RowBox[{"(", 
+                    TemplateBox[{"1"}, "OutputSizeLimit`Skeleton"], ")"}]}], 
+                   RowBox[{"8", " ", 
+                    SuperscriptBox[
+                    TemplateBox[{"1"}, "OutputSizeLimit`Skeleton"], "3"]}]]}],
+                 "0", "0"}, {
+                FractionBox[
+                 TemplateBox[{"1"}, "OutputSizeLimit`Skeleton"], 
+                 SuperscriptBox[
+                  TemplateBox[{"1"}, "OutputSizeLimit`Skeleton"], "4"]], "0", 
+                "0", "0"}}, RowSpacings -> 1, ColumnSpacings -> 1, 
+              RowAlignments -> Baseline, ColumnAlignments -> Center], 
+             "\[NoBreak]", ")"}], 
+           RowBox[{"(", "\[NoBreak]", 
+             TemplateBox[{"1"}, "OutputSizeLimit`Skeleton"], "\[NoBreak]", 
+             ")"}]}, {
+           RowBox[{"(", "\[NoBreak]", 
+             TemplateBox[{"1"}, "OutputSizeLimit`Skeleton"], "\[NoBreak]", 
+             ")"}], 
+           RowBox[{"(", "\[NoBreak]", 
+             GridBox[{{"0", "0", "0", 
+                FractionBox[
+                 RowBox[{"48", " ", "a", " ", "M", " ", "r", " ", 
+                   RowBox[{"(", 
+                    RowBox[{
+                    SuperscriptBox["a", "2"], "-", 
+                    RowBox[{"2", " ", 
+                    SuperscriptBox["r", "2"]}], "+", 
+                    RowBox[{
+                    SuperscriptBox["a", "2"], " ", 
+                    RowBox[{"Cos", "[", 
+                    RowBox[{"2", " ", "theta"}], "]"}]}]}], ")"}], " ", 
+                   RowBox[{"Sin", "[", 
+                    RowBox[{"2", " ", "theta"}], "]"}]}], 
+                 SuperscriptBox[
+                  RowBox[{"(", 
+                    RowBox[{
+                    SuperscriptBox["a", "2"], "+", 
+                    RowBox[{"2", " ", 
+                    SuperscriptBox["r", "2"]}], "+", 
+                    RowBox[{
+                    SuperscriptBox["a", "2"], " ", 
+                    RowBox[{"Cos", "[", 
+                    RowBox[{"2", " ", "theta"}], "]"}]}]}], ")"}], "4"]]}, {
+               "0", "0", 
+                FractionBox[
+                 RowBox[{"M", " ", 
+                   RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"-", "9"}], " ", 
+                    SuperscriptBox["a", "6"]}], "+", 
+                    RowBox[{"57", " ", 
+                    SuperscriptBox["a", "4"], " ", 
+                    SuperscriptBox["r", "2"]}], "+", 
+                    TemplateBox[{"3"}, "OutputSizeLimit`Skeleton"], "+", 
+                    RowBox[{"3", " ", 
+                    SuperscriptBox["a", "4"], " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"-", 
+                    SuperscriptBox["a", "2"]}], "+", 
+                    SuperscriptBox["r", "2"]}], ")"}], " ", 
+                    RowBox[{"Cos", "[", 
+                    RowBox[{"4", " ", "theta"}], "]"}]}]}], ")"}]}], 
+                 RowBox[{"8", " ", 
+                   SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{
+                    SuperscriptBox["a", "2"], "+", 
+                    RowBox[{"r", " ", 
+                    TemplateBox[{"1"}, "OutputSizeLimit`Skeleton"]}]}], ")"}],
+                     "2"], " ", 
+                   SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{
+                    SuperscriptBox["r", "2"], "+", 
+                    RowBox[{
+                    SuperscriptBox["a", "2"], " ", 
+                    SuperscriptBox[
+                    TemplateBox[{"1"}, "OutputSizeLimit`Skeleton"], "2"]}]}], 
+                    ")"}], "3"]}]], "0"}, {"0", 
+                FractionBox[
+                 RowBox[{"M", " ", 
+                   RowBox[{"(", 
+                    RowBox[{
+                    TemplateBox[{"6"}, "OutputSizeLimit`Skeleton"], "+", 
+                    TemplateBox[{"1"}, "OutputSizeLimit`Skeleton"]}], ")"}]}], 
+                 RowBox[{"8", " ", 
+                   SuperscriptBox[
+                    RowBox[{"(", 
+                    TemplateBox[{"1"}, "OutputSizeLimit`Skeleton"], ")"}], 
+                    "2"], " ", 
+                   SuperscriptBox[
+                    RowBox[{"(", 
+                    TemplateBox[{"1"}, "OutputSizeLimit`Skeleton"], ")"}], 
+                    "3"]}]], "0", "0"}, {
+                RowBox[{"-", 
+                  FractionBox[
+                   TemplateBox[{"1"}, "OutputSizeLimit`Skeleton"], 
+                   SuperscriptBox[
+                    TemplateBox[{"1"}, "OutputSizeLimit`Skeleton"], "4"]]}], 
+                "0", "0", "0"}}, RowSpacings -> 1, ColumnSpacings -> 1, 
+              RowAlignments -> Baseline, ColumnAlignments -> Center], 
+             "\[NoBreak]", ")"}], 
+           RowBox[{"(", "\[NoBreak]", 
+             
+             GridBox[{{"0", "0", "0", "0"}, {"0", "0", "0", "0"}, {
+               "0", "0", "0", "0"}, {"0", "0", "0", "0"}}, RowSpacings -> 1, 
+              ColumnSpacings -> 1, RowAlignments -> Baseline, 
+              ColumnAlignments -> Center], "\[NoBreak]", ")"}], 
+           RowBox[{"(", "\[NoBreak]", 
+             TemplateBox[{"1"}, "OutputSizeLimit`Skeleton"], "\[NoBreak]", 
+             ")"}]}, {
+           RowBox[{"(", "\[NoBreak]", 
+             GridBox[{{"0", "0", "0", 
+                FractionBox[
+                 RowBox[{"4", " ", "M", " ", 
+                   RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"-", "512"}], " ", "M", " ", 
+                    SuperscriptBox["r", "5"]}], "+", 
+                    RowBox[{"16", " ", 
+                    SuperscriptBox["r", "3"], " ", 
+                    RowBox[{"(", 
+                    TemplateBox[{"1"}, "OutputSizeLimit`Skeleton"], ")"}], 
+                    " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    SuperscriptBox["a", "2"], "+", 
+                    RowBox[{"2", " ", 
+                    SuperscriptBox["r", "2"]}], "+", 
+                    RowBox[{
+                    SuperscriptBox["a", "2"], " ", 
+                    RowBox[{"Cos", "[", 
+                    RowBox[{"2", " ", "theta"}], "]"}]}]}], ")"}]}], "-", 
+                    TemplateBox[{"1"}, "OutputSizeLimit`Skeleton"], "+", 
+                    RowBox[{"3", " ", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{
+                    SuperscriptBox["a", "2"], "+", 
+                    RowBox[{"2", " ", 
+                    SuperscriptBox["r", "2"]}], "+", 
+                    RowBox[{
+                    SuperscriptBox["a", "2"], " ", 
+                    TemplateBox[{"1"}, "OutputSizeLimit`Skeleton"]}]}], ")"}],
+                     "3"]}]}], ")"}]}], 
+                 SuperscriptBox[
+                  RowBox[{"(", 
+                    RowBox[{
+                    SuperscriptBox["a", "2"], "+", 
+                    RowBox[{"2", " ", 
+                    SuperscriptBox["r", "2"]}], "+", 
+                    RowBox[{
+                    SuperscriptBox["a", "2"], " ", 
+                    RowBox[{"Cos", "[", 
+                    RowBox[{"2", " ", "theta"}], "]"}]}]}], ")"}], "5"]]}, {
+               "0", "0", 
+                FractionBox[
+                 RowBox[{"a", " ", "M", " ", 
+                   RowBox[{"(", 
+                    TemplateBox[{"1"}, "OutputSizeLimit`Skeleton"], ")"}]}], 
+                 RowBox[{
+                   SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{
+                    SuperscriptBox["a", "2"], "+", 
+                    TemplateBox[{"1"}, "OutputSizeLimit`Skeleton"]}], ")"}], 
+                    "2"], " ", 
+                   SuperscriptBox[
+                    RowBox[{"(", 
+                    TemplateBox[{"1"}, "OutputSizeLimit`Skeleton"], ")"}], 
+                    "4"]}]], "0"}, {"0", 
+                FractionBox[
+                 RowBox[{"a", " ", "M", " ", 
+                   RowBox[{"(", 
+                    TemplateBox[{"1"}, "OutputSizeLimit`Skeleton"], ")"}]}], 
+                 RowBox[{
+                   SuperscriptBox[
+                    TemplateBox[{"1"}, "OutputSizeLimit`Skeleton"], "2"], " ", 
+                   SuperscriptBox[
+                    TemplateBox[{"1"}, "OutputSizeLimit`Skeleton"], "4"]}]], 
+                "0", "0"}, {
+                FractionBox[
+                 TemplateBox[{"1"}, "OutputSizeLimit`Skeleton"], 
+                 SuperscriptBox[
+                  TemplateBox[{"1"}, "OutputSizeLimit`Skeleton"], "5"]], "0", 
+                "0", "0"}}, RowSpacings -> 1, ColumnSpacings -> 1, 
+              RowAlignments -> Baseline, ColumnAlignments -> Center], 
+             "\[NoBreak]", ")"}], 
+           RowBox[{"(", "\[NoBreak]", 
+             TemplateBox[{"1"}, "OutputSizeLimit`Skeleton"], "\[NoBreak]", 
+             ")"}], 
+           RowBox[{"(", "\[NoBreak]", 
+             TemplateBox[{"1"}, "OutputSizeLimit`Skeleton"], "\[NoBreak]", 
+             ")"}], 
+           RowBox[{"(", "\[NoBreak]", 
+             GridBox[{{"0", "0", "0", 
+                FractionBox[
+                 RowBox[{"16", " ", "a", " ", 
+                   TemplateBox[{"3"}, "OutputSizeLimit`Skeleton"], " ", 
+                   SuperscriptBox[
+                    RowBox[{"Sin", "[", "theta", "]"}], "2"]}], 
+                 SuperscriptBox[
+                  RowBox[{"(", 
+                    RowBox[{
+                    SuperscriptBox["a", "2"], "+", 
+                    RowBox[{"2", " ", 
+                    SuperscriptBox["r", "2"]}], "+", 
+                    RowBox[{
+                    SuperscriptBox["a", "2"], " ", 
+                    RowBox[{"Cos", "[", 
+                    RowBox[{"2", " ", "theta"}], "]"}]}]}], ")"}], "5"]]}, {
+               "0", "0", 
+                FractionBox[
+                 RowBox[{
+                   SuperscriptBox["a", "2"], " ", 
+                   SuperscriptBox["M", "2"], " ", 
+                   RowBox[{"(", 
+                    TemplateBox[{"1"}, "OutputSizeLimit`Skeleton"], ")"}]}], 
+                 RowBox[{
+                   SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{
+                    SuperscriptBox["a", "2"], "+", 
+                    RowBox[{"r", " ", 
+                    TemplateBox[{"1"}, "OutputSizeLimit`Skeleton"]}]}], ")"}],
+                     "2"], " ", 
+                   SuperscriptBox[
+                    RowBox[{"(", 
+                    TemplateBox[{"1"}, "OutputSizeLimit`Skeleton"], ")"}], 
+                    "4"]}]], "0"}, {"0", 
+                FractionBox[
+                 RowBox[{
+                   SuperscriptBox["a", "2"], " ", 
+                   SuperscriptBox["M", "2"], " ", 
+                   RowBox[{"(", 
+                    TemplateBox[{"1"}, "OutputSizeLimit`Skeleton"], ")"}]}], 
+                 RowBox[{
+                   SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{
+                    SuperscriptBox["a", "2"], "+", 
+                    TemplateBox[{"1"}, "OutputSizeLimit`Skeleton"]}], ")"}], 
+                    "2"], " ", 
+                   SuperscriptBox[
+                    TemplateBox[{"1"}, "OutputSizeLimit`Skeleton"], "4"]}]], 
+                "0", "0"}, {
+                RowBox[{"-", 
+                  FractionBox[
+                   RowBox[{"16", " ", 
+                    TemplateBox[{"5"}, "OutputSizeLimit`Skeleton"]}], 
+                   SuperscriptBox[
+                    TemplateBox[{"1"}, "OutputSizeLimit`Skeleton"], "5"]]}], 
+                "0", "0", "0"}}, RowSpacings -> 1, ColumnSpacings -> 1, 
+              RowAlignments -> Baseline, ColumnAlignments -> Center], 
+             "\[NoBreak]", ")"}]}}, RowSpacings -> 1, ColumnSpacings -> 1, 
+         RowAlignments -> Baseline, ColumnAlignments -> Center], "\[NoBreak]",
+         ")"}], 
+      Function[BoxForm`e$, 
+       MatrixForm[BoxForm`e$]]], Short[#, 8]& ], "line" -> 12, "sessionID" -> 
+   21881202941905755860, "byteCount" -> 378176, "size" -> 8, "stored" -> True,
+    "expr" -> MatrixForm[{{{{
+        0, 0, 0, ((((((-16) $CellContext`a) $CellContext`M^2) $CellContext`r) \
+($CellContext`a^2 + 
+             2 $CellContext`r^2 + $CellContext`a^2 
+              Cos[2 $CellContext`theta])^(-5)) (
+           9 $CellContext`a^4 - (44 $CellContext`a^2) $CellContext`r^2 + 
+           16 $CellContext`r^4 + ((4 $CellContext`a^2) (3 $CellContext`a^2 - 
+              11 $CellContext`r^2)) 
+            Cos[2 $CellContext`theta] + (3 $CellContext`a^4) 
+            Cos[4 $CellContext`theta])) Sin[$CellContext`theta]^2}, {
+        0, 0, ((($CellContext`a^2 $CellContext`M^2) ($CellContext`a^2 + \
+$CellContext`r ((-2) $CellContext`M + $CellContext`r))^(-2)) \
+($CellContext`a^2 + 
+            2 $CellContext`r^2 + $CellContext`a^2 
+             Cos[2 $CellContext`theta])^(-4)) ((
+            5 $CellContext`a^6 - (
+             117 $CellContext`a^4) $CellContext`r^2 + ((
+               64 $CellContext`a^2) $CellContext`r^3) (
+              3 $CellContext`M + $CellContext`r) + (
+              48 $CellContext`r^5) ((-8) $CellContext`M + 5 $CellContext`r)) 
+           Sin[2 $CellContext`theta] + ((
+             4 $CellContext`a^2) ($CellContext`a^4 - (
+              15 $CellContext`a^2) $CellContext`r^2 + (
+               24 $CellContext`M) $CellContext`r^3 - 10 $CellContext`r^4)) 
+           Sin[4 $CellContext`theta] + (($CellContext`a^4 ($CellContext`a - \
+$CellContext`r)) ($CellContext`a + $CellContext`r)) 
+           Sin[6 $CellContext`theta]), 0}, {
+        0, ((($CellContext`a^2 $CellContext`M^2) ($CellContext`a^2 + \
+$CellContext`r ((-2) $CellContext`M + $CellContext`r))^(-2)) \
+($CellContext`a^2 + 
+            2 $CellContext`r^2 + $CellContext`a^2 
+             Cos[2 $CellContext`theta])^(-4)) ((-(
+             5 $CellContext`a^6 - (
+              117 $CellContext`a^4) $CellContext`r^2 + ((
+                64 $CellContext`a^2) $CellContext`r^3) (
+               3 $CellContext`M + $CellContext`r) + (
+               48 $CellContext`r^5) ((-8) $CellContext`M + 5 $CellContext`r)))
+             Sin[2 $CellContext`theta] - ((
+            4 $CellContext`a^2) ($CellContext`a^4 - (
+             15 $CellContext`a^2) $CellContext`r^2 + (
+              24 $CellContext`M) $CellContext`r^3 - 10 $CellContext`r^4)) 
+          Sin[4 $CellContext`theta] + ($CellContext`a^4 (-$CellContext`a^2 + \
+$CellContext`r^2)) Sin[6 $CellContext`theta]), 0, 
+         0}, {(((((
+              16 $CellContext`a) $CellContext`M^2) $CellContext`r) \
+($CellContext`a^2 + 
+             2 $CellContext`r^2 + $CellContext`a^2 
+              Cos[2 $CellContext`theta])^(-5)) (
+           9 $CellContext`a^4 - (44 $CellContext`a^2) $CellContext`r^2 + 
+           16 $CellContext`r^4 + ((4 $CellContext`a^2) (3 $CellContext`a^2 - 
+              11 $CellContext`r^2)) 
+            Cos[2 $CellContext`theta] + (3 $CellContext`a^4) 
+            Cos[4 $CellContext`theta])) Sin[$CellContext`theta]^2, 0, 0, 
+         0}}, {{0, (((
+            Rational[
+             1, 2] $CellContext`M) ($CellContext`a^2 + $CellContext`r ((-2) \
+$CellContext`M + $CellContext`r))^(-2)) ($CellContext`a^2 + 
+            2 $CellContext`r^2 + $CellContext`a^2 
+             Cos[2 $CellContext`theta])^(-4)) ((-78) $CellContext`a^8 + (
+            510 $CellContext`a^6) $CellContext`r^2 + (
+            64 (4 $CellContext`M - 3 $CellContext`r)) $CellContext`r^7 + ((
+             16 $CellContext`a^2) $CellContext`r^5) ((-24) $CellContext`M + 
+            7 $CellContext`r) + ((
+             32 $CellContext`a^4) $CellContext`r^3) ((-36) $CellContext`M + 
+            29 $CellContext`r) + ($CellContext`a^2 ((-99) $CellContext`a^6 + (
+               387 $CellContext`a^4) $CellContext`r^2 + (
+               16 $CellContext`r^5) ((-72) $CellContext`M + 
+               41 $CellContext`r) + ((
+                16 $CellContext`a^2) $CellContext`r^3) ((-56) $CellContext`M + 
+               69 $CellContext`r))) 
+           Cos[2 $CellContext`theta] - ((2 $CellContext`a^4) (
+            9 $CellContext`a^4 + (63 $CellContext`a^2) $CellContext`r^2 + (
+              8 $CellContext`r^3) ((-16) $CellContext`M + 7 $CellContext`r))) 
+          Cos[4 $CellContext`theta] + (((
+              3 $CellContext`a^6) ($CellContext`a - $CellContext`r)) \
+($CellContext`a + $CellContext`r)) 
+           Cos[6 $CellContext`theta]), ((((
+             2 $CellContext`a^2) $CellContext`M) ($CellContext`a^2 + \
+$CellContext`r ((-2) $CellContext`M + $CellContext`r))^(-2)) \
+($CellContext`a^2 + 
+            2 $CellContext`r^2 + $CellContext`a^2 
+             Cos[2 $CellContext`theta])^(-4)) (($CellContext`a^6 (
+              5 $CellContext`M - 
+              72 $CellContext`r) + ((
+               171 $CellContext`a^4) $CellContext`M) $CellContext`r^2 + ((
+               48 (4 $CellContext`M - 
+                3 $CellContext`r)) ($CellContext`M - $CellContext`r)) \
+$CellContext`r^5 + ((
+               8 $CellContext`a^2) $CellContext`r^3) ((-12) $CellContext`M^2 - \
+(28 $CellContext`M) $CellContext`r + 27 $CellContext`r^2)) 
+           Sin[2 $CellContext`theta] + ((
+             4 $CellContext`a^2) ($CellContext`a^4 ($CellContext`M - 
+               9 $CellContext`r) + ((3 $CellContext`a^2) (7 $CellContext`M - 
+                6 $CellContext`r)) $CellContext`r^2 + $CellContext`r^3 ((-12) \
+$CellContext`M^2 + (26 $CellContext`M) $CellContext`r - 9 $CellContext`r^2))) 
+           Sin[4 $CellContext`theta] + ((($CellContext`a^4 $CellContext`M) \
+($CellContext`a - $CellContext`r)) ($CellContext`a + $CellContext`r)) 
+           Sin[6 $CellContext`theta]), 
+         0}, {(((Rational[
+             1, 2] $CellContext`M) ($CellContext`a^2 + $CellContext`r ((-2) \
+$CellContext`M + $CellContext`r))^(-2)) ($CellContext`a^2 + 
+            2 $CellContext`r^2 + $CellContext`a^2 
+             Cos[2 $CellContext`theta])^(-4)) (
+          78 $CellContext`a^8 - (
+           510 $CellContext`a^6) $CellContext`r^2 + ((32 $CellContext`a^4) (
+             36 $CellContext`M - 29 $CellContext`r)) $CellContext`r^3 + ((
+             16 $CellContext`a^2) (24 $CellContext`M - 
+             7 $CellContext`r)) $CellContext`r^5 + (
+            64 $CellContext`r^7) ((-4) $CellContext`M + 
+            3 $CellContext`r) + ($CellContext`a^2 (
+             99 $CellContext`a^6 - (
+              387 $CellContext`a^4) $CellContext`r^2 + ((
+                16 $CellContext`a^2) (56 $CellContext`M - 
+                69 $CellContext`r)) $CellContext`r^3 + (
+               16 (72 $CellContext`M - 41 $CellContext`r)) $CellContext`r^5)) 
+           Cos[2 $CellContext`theta] + ((2 $CellContext`a^4) (
+             9 $CellContext`a^4 + (63 $CellContext`a^2) $CellContext`r^2 + (
+               8 $CellContext`r^3) ((-16) $CellContext`M + 7 $CellContext`r)))
+             Cos[4 $CellContext`theta] - (((
+             3 $CellContext`a^6) ($CellContext`a - $CellContext`r)) \
+($CellContext`a + $CellContext`r)) Cos[6 $CellContext`theta]), 0, 
+         0, ((((((-6) $CellContext`a) $CellContext`M) ($CellContext`a^2 + \
+$CellContext`r ((-2) $CellContext`M + $CellContext`r))^(-2)) \
+($CellContext`a^2 + 
+             2 $CellContext`r^2 + $CellContext`a^2 
+              Cos[2 $CellContext`theta])^(-4)) (
+           9 $CellContext`a^8 - (
+            54 $CellContext`a^6) $CellContext`r^2 + ($CellContext`a^4 (
+              124 $CellContext`M - 111 $CellContext`r)) $CellContext`r^3 + ((
+              8 $CellContext`a^2) (8 $CellContext`M - 
+              3 $CellContext`r)) $CellContext`r^5 + (
+             8 $CellContext`r^7) ((-4) $CellContext`M + 
+             3 $CellContext`r) + ((4 $CellContext`a^2) (
+              3 $CellContext`a^6 - (
+               12 $CellContext`a^4) $CellContext`r^2 + ($CellContext`a^2 (
+                 28 $CellContext`M - 33 $CellContext`r)) $CellContext`r^3 + (
+                2 (16 $CellContext`M - 9 $CellContext`r)) $CellContext`r^5)) 
+            Cos[2 $CellContext`theta] + ((
+              3 $CellContext`a^4) ($CellContext`a^4 + (
+                2 $CellContext`a^2) $CellContext`r^2 + $CellContext`r^3 ((-4) \
+$CellContext`M + $CellContext`r))) Cos[4 $CellContext`theta])) 
+         Sin[$CellContext`theta]^2}, {((((
+             2 $CellContext`a^2) $CellContext`M) ($CellContext`a^2 + \
+$CellContext`r ((-2) $CellContext`M + $CellContext`r))^(-2)) \
+($CellContext`a^2 + 
+            2 $CellContext`r^2 + $CellContext`a^2 
+             Cos[2 $CellContext`theta])^(-4)) (((((-171) $CellContext`a^4) \
+$CellContext`M) $CellContext`r^2 - ((
+              48 (4 $CellContext`M - 
+               3 $CellContext`r)) ($CellContext`M - $CellContext`r)) \
+$CellContext`r^5 + $CellContext`a^6 ((-5) $CellContext`M + 
+              72 $CellContext`r) + ((8 $CellContext`a^2) $CellContext`r^3) (
+              12 $CellContext`M^2 + (28 $CellContext`M) $CellContext`r - 
+              27 $CellContext`r^2)) 
+           Sin[2 $CellContext`theta] + ((
+             4 $CellContext`a^2) ((-$CellContext`a^4) ($CellContext`M - 
+               9 $CellContext`r) + ((
+                3 $CellContext`a^2) $CellContext`r^2) ((-7) $CellContext`M + 
+               6 $CellContext`r) + $CellContext`r^3 (
+               12 $CellContext`M^2 - (26 $CellContext`M) $CellContext`r + 
+               9 $CellContext`r^2))) 
+           Sin[4 $CellContext`theta] + (($CellContext`a^4 $CellContext`M) \
+(-$CellContext`a^2 + $CellContext`r^2)) Sin[6 $CellContext`theta]), 0, 
+         0, ((((2 $CellContext`a) $CellContext`M) ($CellContext`a^2 + \
+$CellContext`r ((-2) $CellContext`M + $CellContext`r))^(-2)) \
+($CellContext`a^2 + 
+            2 $CellContext`r^2 + $CellContext`a^2 
+             Cos[2 $CellContext`theta])^(-4)) (($CellContext`a^8 (
+              5 $CellContext`M - 
+              52 $CellContext`r) + ((2 $CellContext`a^6) (53 $CellContext`M - 
+               24 $CellContext`r)) $CellContext`r^2 + (
+              48 $CellContext`r^8) (-$CellContext`M + $CellContext`r) + ((
+               8 $CellContext`a^2) $CellContext`r^5) (
+              12 $CellContext`M^2 - (30 $CellContext`M) $CellContext`r + 
+              19 $CellContext`r^2) + ($CellContext`a^4 $CellContext`r^3) \
+((-36) $CellContext`M^2 - (91 $CellContext`M) $CellContext`r + 
+              108 $CellContext`r^2)) 
+           Sin[2 $CellContext`theta] + ((
+             4 $CellContext`a^2) ($CellContext`a^6 ($CellContext`M - 
+               5 $CellContext`r) + ($CellContext`a^4 (8 $CellContext`M - 
+                21 $CellContext`r)) $CellContext`r^2 + ($CellContext`a^2 (
+                37 $CellContext`M - 
+                27 $CellContext`r)) $CellContext`r^4 + $CellContext`r^5 \
+((-12) $CellContext`M^2 + (30 $CellContext`M) $CellContext`r - 
+               11 $CellContext`r^2))) 
+           Sin[4 $CellContext`theta] + ($CellContext`a^4 (((
+                2 $CellContext`a^2) $CellContext`r^2) ((-7) $CellContext`M + 
+               4 $CellContext`r) + $CellContext`a^4 ($CellContext`M + 
+               4 $CellContext`r) + $CellContext`r^3 (
+               12 $CellContext`M^2 - (15 $CellContext`M) $CellContext`r + 
+               4 $CellContext`r^2))) Sin[6 $CellContext`theta])}, {
+        0, (((((6 $CellContext`a) $CellContext`M) ($CellContext`a^2 + \
+$CellContext`r ((-2) $CellContext`M + $CellContext`r))^(-2)) \
+($CellContext`a^2 + 
+             2 $CellContext`r^2 + $CellContext`a^2 
+              Cos[2 $CellContext`theta])^(-4)) (
+           9 $CellContext`a^8 - (
+            54 $CellContext`a^6) $CellContext`r^2 + ($CellContext`a^4 (
+              124 $CellContext`M - 111 $CellContext`r)) $CellContext`r^3 + ((
+              8 $CellContext`a^2) (8 $CellContext`M - 
+              3 $CellContext`r)) $CellContext`r^5 + (
+             8 $CellContext`r^7) ((-4) $CellContext`M + 
+             3 $CellContext`r) + ((4 $CellContext`a^2) (
+              3 $CellContext`a^6 - (
+               12 $CellContext`a^4) $CellContext`r^2 + ($CellContext`a^2 (
+                 28 $CellContext`M - 33 $CellContext`r)) $CellContext`r^3 + (
+                2 (16 $CellContext`M - 9 $CellContext`r)) $CellContext`r^5)) 
+            Cos[2 $CellContext`theta] + ((
+              3 $CellContext`a^4) ($CellContext`a^4 + (
+                2 $CellContext`a^2) $CellContext`r^2 + $CellContext`r^3 ((-4) \
+$CellContext`M + $CellContext`r))) Cos[4 $CellContext`theta])) 
+         Sin[$CellContext`theta]^2, (((((-2) $CellContext`a) $CellContext`M) \
+($CellContext`a^2 + $CellContext`r ((-2) $CellContext`M + \
+$CellContext`r))^(-2)) ($CellContext`a^2 + 
+            2 $CellContext`r^2 + $CellContext`a^2 
+             Cos[2 $CellContext`theta])^(-4)) (($CellContext`a^8 (
+              5 $CellContext`M - 
+              52 $CellContext`r) + ((2 $CellContext`a^6) (53 $CellContext`M - 
+               24 $CellContext`r)) $CellContext`r^2 + (
+              48 $CellContext`r^8) (-$CellContext`M + $CellContext`r) + ((
+               8 $CellContext`a^2) $CellContext`r^5) (
+              12 $CellContext`M^2 - (30 $CellContext`M) $CellContext`r + 
+              19 $CellContext`r^2) + ($CellContext`a^4 $CellContext`r^3) \
+((-36) $CellContext`M^2 - (91 $CellContext`M) $CellContext`r + 
+              108 $CellContext`r^2)) 
+           Sin[2 $CellContext`theta] + ((
+             4 $CellContext`a^2) ($CellContext`a^6 ($CellContext`M - 
+               5 $CellContext`r) + ($CellContext`a^4 (8 $CellContext`M - 
+                21 $CellContext`r)) $CellContext`r^2 + ($CellContext`a^2 (
+                37 $CellContext`M - 
+                27 $CellContext`r)) $CellContext`r^4 + $CellContext`r^5 \
+((-12) $CellContext`M^2 + (30 $CellContext`M) $CellContext`r - 
+               11 $CellContext`r^2))) 
+           Sin[4 $CellContext`theta] + ($CellContext`a^4 (((
+                2 $CellContext`a^2) $CellContext`r^2) ((-7) $CellContext`M + 
+               4 $CellContext`r) + $CellContext`a^4 ($CellContext`M + 
+               4 $CellContext`r) + $CellContext`r^3 (
+               12 $CellContext`M^2 - (15 $CellContext`M) $CellContext`r + 
+               4 $CellContext`r^2))) Sin[6 $CellContext`theta]), 0}}, {{
+        0, ((($CellContext`a^2 $CellContext`M) ($CellContext`a^2 + \
+$CellContext`r ((-2) $CellContext`M + $CellContext`r))^(-2)) \
+($CellContext`a^2 + 
+            2 $CellContext`r^2 + $CellContext`a^2 
+             Cos[2 $CellContext`theta])^(-4)) (($CellContext`a^6 (
+              5 $CellContext`M - 
+              144 $CellContext`r) + ((
+               459 $CellContext`a^4) $CellContext`M) $CellContext`r^2 + (
+              48 $CellContext`r^5) (
+              16 $CellContext`M^2 - (19 $CellContext`M) $CellContext`r + 
+              6 $CellContext`r^2) + ((
+               16 $CellContext`a^2) $CellContext`r^3) ((-24) $CellContext`M^2 - \
+(32 $CellContext`M) $CellContext`r + 27 $CellContext`r^2)) 
+           Sin[2 $CellContext`theta] + ((
+             4 $CellContext`a^2) ($CellContext`a^4 ($CellContext`M - 
+               18 $CellContext`r) + ((3 $CellContext`a^2) (19 $CellContext`M - 
+                12 $CellContext`r)) $CellContext`r^2 - (2 $CellContext`r^3) (
+              24 $CellContext`M^2 - (31 $CellContext`M) $CellContext`r + 
+              9 $CellContext`r^2))) 
+           Sin[4 $CellContext`theta] + ((($CellContext`a^4 $CellContext`M) \
+($CellContext`a - $CellContext`r)) ($CellContext`a + $CellContext`r)) 
+           Sin[6 $CellContext`theta]), ($CellContext`M ($CellContext`a^2 + 
+            2 $CellContext`r^2 + $CellContext`a^2 
+             Cos[2 $CellContext`theta])^(-4)) (
+          24 $CellContext`a^6 - (162 $CellContext`a^4) $CellContext`r^2 - (
+           16 $CellContext`a^2) $CellContext`r^4 + 
+          16 $CellContext`r^6 + ($CellContext`a^2 (
+             27 $CellContext`a^4 - (72 $CellContext`a^2) $CellContext`r^2 - 
+             160 $CellContext`r^4)) 
+           Cos[2 $CellContext`theta] + ((
+             90 $CellContext`a^4) $CellContext`r^2) 
+           Cos[4 $CellContext`theta] - (3 $CellContext`a^6) 
+          Cos[6 $CellContext`theta]), 
+         0}, {((($CellContext`a^2 $CellContext`M) ($CellContext`a^2 + \
+$CellContext`r ((-2) $CellContext`M + $CellContext`r))^(-2)) \
+($CellContext`a^2 + 
+            2 $CellContext`r^2 + $CellContext`a^2 
+             Cos[2 $CellContext`theta])^(-4)) (((((-459) $CellContext`a^4) \
+$CellContext`M) $CellContext`r^2 + $CellContext`a^6 ((-5) $CellContext`M + 
+              144 $CellContext`r) + ((16 $CellContext`a^2) $CellContext`r^3) (
+              24 $CellContext`M^2 + (32 $CellContext`M) $CellContext`r - 
+              27 $CellContext`r^2) - (48 $CellContext`r^5) (
+             16 $CellContext`M^2 - (19 $CellContext`M) $CellContext`r + 
+             6 $CellContext`r^2)) 
+           Sin[2 $CellContext`theta] - ((
+            4 $CellContext`a^2) ($CellContext`a^4 ($CellContext`M - 
+              18 $CellContext`r) + ((3 $CellContext`a^2) (19 $CellContext`M - 
+               12 $CellContext`r)) $CellContext`r^2 - (2 $CellContext`r^3) (
+             24 $CellContext`M^2 - (31 $CellContext`M) $CellContext`r + 
+             9 $CellContext`r^2))) 
+          Sin[4 $CellContext`theta] + (($CellContext`a^4 $CellContext`M) \
+(-$CellContext`a^2 + $CellContext`r^2)) Sin[6 $CellContext`theta]), 0, 
+         0, ((($CellContext`a $CellContext`M) ($CellContext`a^2 + \
+$CellContext`r ((-2) $CellContext`M + $CellContext`r))^(-2)) \
+($CellContext`a^2 + 
+            2 $CellContext`r^2 + $CellContext`a^2 
+             Cos[2 $CellContext`theta])^(-4)) (($CellContext`a^8 (
+              5 $CellContext`M - 
+              79 $CellContext`r) + ((2 $CellContext`a^6) (107 $CellContext`M - 
+               15 $CellContext`r)) $CellContext`r^2 + (
+              48 $CellContext`r^8) (-$CellContext`M + $CellContext`r) + ((
+               16 $CellContext`a^2) $CellContext`r^5) (
+              24 $CellContext`M^2 - (33 $CellContext`M) $CellContext`r + 
+              14 $CellContext`r^2) + ($CellContext`a^4 $CellContext`r^3) \
+((-144) $CellContext`M^2 - (271 $CellContext`M) $CellContext`r + 
+              225 $CellContext`r^2)) 
+           Sin[2 $CellContext`theta] + ((
+             4 $CellContext`a^2) ($CellContext`a^6 ($CellContext`M - 
+               5 $CellContext`r) + ((2 $CellContext`a^4) (4 $CellContext`M - 
+                15 $CellContext`r)) $CellContext`r^2 + ($CellContext`a^2 (
+                73 $CellContext`M - 45 $CellContext`r)) $CellContext`r^4 - (
+              2 $CellContext`r^5) (
+              24 $CellContext`M^2 - (33 $CellContext`M) $CellContext`r + 
+              10 $CellContext`r^2))) 
+           Sin[4 $CellContext`theta] + ($CellContext`a^4 (((
+                2 $CellContext`a^2) $CellContext`r^2) ((-25) $CellContext`M + 
+               13 $CellContext`r) + $CellContext`a^4 ($CellContext`M + 
+               13 $CellContext`r) + $CellContext`r^3 (
+               48 $CellContext`M^2 - (51 $CellContext`M) $CellContext`r + 
+               13 $CellContext`r^2))) 
+           Sin[6 $CellContext`theta])}, {($CellContext`M ($CellContext`a^2 + 
+            2 $CellContext`r^2 + $CellContext`a^2 
+             Cos[2 $CellContext`theta])^(-4)) ((-24) $CellContext`a^6 + (
+            162 $CellContext`a^4) $CellContext`r^2 + (
+            16 $CellContext`a^2) $CellContext`r^4 - 
+          16 $CellContext`r^6 + ((-27) $CellContext`a^6 + (
+              72 $CellContext`a^4) $CellContext`r^2 + (
+              160 $CellContext`a^2) $CellContext`r^4) 
+           Cos[2 $CellContext`theta] - ((
+            90 $CellContext`a^4) $CellContext`r^2) 
+          Cos[4 $CellContext`theta] + (3 $CellContext`a^6) 
+           Cos[6 $CellContext`theta]), 0, 
+         0, ((((6 $CellContext`a) $CellContext`M) ($CellContext`a^2 + 
+             2 $CellContext`r^2 + $CellContext`a^2 
+              Cos[2 $CellContext`theta])^(-4)) (
+           9 $CellContext`a^6 - (45 $CellContext`a^4) $CellContext`r^2 - (
+            32 $CellContext`a^2) $CellContext`r^4 + 
+           8 $CellContext`r^6 + ((4 $CellContext`a^2) (
+              3 $CellContext`a^4 - (9 $CellContext`a^2) $CellContext`r^2 - 
+              14 $CellContext`r^4)) 
+            Cos[2 $CellContext`theta] + ((
+              3 $CellContext`a^4) ($CellContext`a^2 + 3 $CellContext`r^2)) 
+            Cos[4 $CellContext`theta])) Sin[$CellContext`theta]^2}, {
+        0, ((($CellContext`a $CellContext`M) ($CellContext`a^2 + \
+$CellContext`r ((-2) $CellContext`M + $CellContext`r))^(-2)) \
+($CellContext`a^2 + 
+            2 $CellContext`r^2 + $CellContext`a^2 
+             Cos[2 $CellContext`theta])^(-4)) (((
+              48 ($CellContext`M - $CellContext`r)) $CellContext`r^8 + ((
+               2 $CellContext`a^6) $CellContext`r^2) ((-107) $CellContext`M + 
+              15 $CellContext`r) + $CellContext`a^8 ((-5) $CellContext`M + 
+              79 $CellContext`r) + ($CellContext`a^4 $CellContext`r^3) (
+              144 $CellContext`M^2 + (271 $CellContext`M) $CellContext`r - 
+              225 $CellContext`r^2) - ((
+              16 $CellContext`a^2) $CellContext`r^5) (
+             24 $CellContext`M^2 - (33 $CellContext`M) $CellContext`r + 
+             14 $CellContext`r^2)) 
+           Sin[2 $CellContext`theta] - ((
+            4 $CellContext`a^2) ($CellContext`a^6 ($CellContext`M - 
+              5 $CellContext`r) + ((2 $CellContext`a^4) (4 $CellContext`M - 
+               15 $CellContext`r)) $CellContext`r^2 + ($CellContext`a^2 (
+               73 $CellContext`M - 45 $CellContext`r)) $CellContext`r^4 - (
+             2 $CellContext`r^5) (
+             24 $CellContext`M^2 - (33 $CellContext`M) $CellContext`r + 
+             10 $CellContext`r^2))) 
+          Sin[4 $CellContext`theta] - ($CellContext`a^4 (((
+               2 $CellContext`a^2) $CellContext`r^2) ((-25) $CellContext`M + 
+              13 $CellContext`r) + $CellContext`a^4 ($CellContext`M + 
+              13 $CellContext`r) + $CellContext`r^3 (
+              48 $CellContext`M^2 - (51 $CellContext`M) $CellContext`r + 
+              13 $CellContext`r^2))) 
+          Sin[6 $CellContext`theta]), (((((-6) $CellContext`a) \
+$CellContext`M) ($CellContext`a^2 + 
+             2 $CellContext`r^2 + $CellContext`a^2 
+              Cos[2 $CellContext`theta])^(-4)) (
+           9 $CellContext`a^6 - (45 $CellContext`a^4) $CellContext`r^2 - (
+            32 $CellContext`a^2) $CellContext`r^4 + 
+           8 $CellContext`r^6 + ((4 $CellContext`a^2) (
+              3 $CellContext`a^4 - (9 $CellContext`a^2) $CellContext`r^2 - 
+              14 $CellContext`r^4)) 
+            Cos[2 $CellContext`theta] + ((
+              3 $CellContext`a^4) ($CellContext`a^2 + 3 $CellContext`r^2)) 
+            Cos[4 $CellContext`theta])) Sin[$CellContext`theta]^2, 0}}, {{
+        0, 0, 0, (((-$CellContext`M) ($CellContext`a^2 + 
+             2 $CellContext`r^2 + $CellContext`a^2 
+              Cos[2 $CellContext`theta])^(-5)) ((-30) $CellContext`a^8 - 
+           32 $CellContext`r^8 + ((
+              16 $CellContext`a^2) $CellContext`r^5) ((-8) $CellContext`M + 
+             7 $CellContext`r) + ((
+              6 $CellContext`a^6) $CellContext`r) ((-4) $CellContext`M + 
+             15 $CellContext`r) + ((4 $CellContext`a^4) $CellContext`r^3) (
+             44 $CellContext`M + 
+             75 $CellContext`r) + ($CellContext`a^2 ((-45) $CellContext`a^6 + \
+(320 $CellContext`a^2) $CellContext`r^4 + (16 $CellContext`r^5) (
+                8 $CellContext`M + 
+                13 $CellContext`r) + ((
+                 3 $CellContext`a^4) $CellContext`r) ((-4) $CellContext`M + 
+                35 $CellContext`r))) 
+            Cos[2 $CellContext`theta] + ((
+              2 $CellContext`a^4) ((-9) $CellContext`a^4 + ((
+                 3 $CellContext`a^2) $CellContext`r) (
+                4 $CellContext`M + $CellContext`r) + (
+                2 $CellContext`r^3) ((-44) $CellContext`M + 
+                5 $CellContext`r))) 
+            Cos[4 $CellContext`theta] - ((
+             3 $CellContext`a^6) ($CellContext`a^2 + $CellContext`r ((-4) \
+$CellContext`M + 3 $CellContext`r))) Cos[6 $CellContext`theta])) 
+         Sin[$CellContext`theta]^2}, {
+        0, 0, ((($CellContext`a $CellContext`M) ($CellContext`a^2 + \
+$CellContext`r ((-2) $CellContext`M + $CellContext`r))^(-2)) \
+($CellContext`a^2 + 
+            2 $CellContext`r^2 + $CellContext`a^2 
+             Cos[2 $CellContext`theta])^(-4)) ((((-5) $CellContext`a^8) \
+($CellContext`M - 5 $CellContext`r) + (
+              48 ($CellContext`M - $CellContext`r)) $CellContext`r^8 + ((
+               2 $CellContext`a^6) $CellContext`r^2) ($CellContext`M + 
+              33 $CellContext`r) - ((
+              16 $CellContext`a^2) $CellContext`r^5) ((-12) $CellContext`M^2 + \
+(3 $CellContext`M) $CellContext`r + 
+             5 $CellContext`r^2) + ($CellContext`a^4 $CellContext`r^3) ((-72) \
+$CellContext`M^2 - (89 $CellContext`M) $CellContext`r + 9 $CellContext`r^2)) 
+           Sin[2 $CellContext`theta] - ((
+            4 $CellContext`a^2) ($CellContext`a^6 ($CellContext`M - 
+              5 $CellContext`r) + ((4 $CellContext`a^4) (2 $CellContext`M - 
+               3 $CellContext`r)) $CellContext`r^2 + ($CellContext`a^2 \
+($CellContext`M - 9 $CellContext`r)) $CellContext`r^4 - (
+             2 $CellContext`r^5) ((-12) $CellContext`M^2 + (
+               3 $CellContext`M) $CellContext`r + $CellContext`r^2))) 
+          Sin[4 $CellContext`theta] + ($CellContext`a^4 ((-$CellContext`a^4) \
+($CellContext`M - 
+               5 $CellContext`r) + ((
+                2 $CellContext`a^2) $CellContext`r^2) ((-11) $CellContext`M + 
+               5 $CellContext`r) + $CellContext`r^3 (
+               24 $CellContext`M^2 - (21 $CellContext`M) $CellContext`r + 
+               5 $CellContext`r^2))) Sin[6 $CellContext`theta]), 0}, {
+        0, ((($CellContext`a $CellContext`M) ($CellContext`a^2 + \
+$CellContext`r ((-2) $CellContext`M + $CellContext`r))^(-2)) \
+($CellContext`a^2 + 
+            2 $CellContext`r^2 + $CellContext`a^2 
+             Cos[2 $CellContext`theta])^(-4)) (((
+              5 $CellContext`a^8) ($CellContext`M - 5 $CellContext`r) + (
+              48 $CellContext`r^8) (-$CellContext`M + $CellContext`r) - ((
+              2 $CellContext`a^6) $CellContext`r^2) ($CellContext`M + 
+             33 $CellContext`r) + ($CellContext`a^4 $CellContext`r^3) (
+              72 $CellContext`M^2 + (89 $CellContext`M) $CellContext`r - 
+              9 $CellContext`r^2) + ((
+               16 $CellContext`a^2) $CellContext`r^5) ((-12) $CellContext`M^2 + \
+(3 $CellContext`M) $CellContext`r + 5 $CellContext`r^2)) 
+           Sin[2 $CellContext`theta] + ((
+             4 $CellContext`a^2) ($CellContext`a^6 ($CellContext`M - 
+               5 $CellContext`r) + ((4 $CellContext`a^4) (2 $CellContext`M - 
+                3 $CellContext`r)) $CellContext`r^2 + ($CellContext`a^2 \
+($CellContext`M - 9 $CellContext`r)) $CellContext`r^4 - (
+              2 $CellContext`r^5) ((-12) $CellContext`M^2 + (
+                3 $CellContext`M) $CellContext`r + $CellContext`r^2))) 
+           Sin[4 $CellContext`theta] + ($CellContext`a^4 ($CellContext`a^4 \
+($CellContext`M - 
+               5 $CellContext`r) + ((2 $CellContext`a^2) (11 $CellContext`M - 
+                5 $CellContext`r)) $CellContext`r^2 + $CellContext`r^3 ((-24) \
+$CellContext`M^2 + (21 $CellContext`M) $CellContext`r - 5 $CellContext`r^2))) 
+           Sin[6 $CellContext`theta]), 0, 
+         0}, {(($CellContext`M ($CellContext`a^2 + 
+             2 $CellContext`r^2 + $CellContext`a^2 
+              Cos[2 $CellContext`theta])^(-5)) ((-30) $CellContext`a^8 - 
+           32 $CellContext`r^8 + ((
+              16 $CellContext`a^2) $CellContext`r^5) ((-8) $CellContext`M + 
+             7 $CellContext`r) + ((
+              6 $CellContext`a^6) $CellContext`r) ((-4) $CellContext`M + 
+             15 $CellContext`r) + ((4 $CellContext`a^4) $CellContext`r^3) (
+             44 $CellContext`M + 
+             75 $CellContext`r) + ($CellContext`a^2 ((-45) $CellContext`a^6 + \
+(320 $CellContext`a^2) $CellContext`r^4 + (16 $CellContext`r^5) (
+                8 $CellContext`M + 
+                13 $CellContext`r) + ((
+                 3 $CellContext`a^4) $CellContext`r) ((-4) $CellContext`M + 
+                35 $CellContext`r))) 
+            Cos[2 $CellContext`theta] + ((
+              2 $CellContext`a^4) ((-9) $CellContext`a^4 + ((
+                 3 $CellContext`a^2) $CellContext`r) (
+                4 $CellContext`M + $CellContext`r) + (
+                2 $CellContext`r^3) ((-44) $CellContext`M + 
+                5 $CellContext`r))) 
+            Cos[4 $CellContext`theta] - ((
+             3 $CellContext`a^6) ($CellContext`a^2 + $CellContext`r ((-4) \
+$CellContext`M + 3 $CellContext`r))) Cos[6 $CellContext`theta])) 
+         Sin[$CellContext`theta]^2, 0, 0, 0}}}, {{{
+        0, ($CellContext`M ($CellContext`a^2 + 
+            2 $CellContext`r^2 + $CellContext`a^2 
+             Cos[2 $CellContext`theta])^(-5)) ((-78) $CellContext`a^6 + (
+            64 (8 $CellContext`M - 3 $CellContext`r)) $CellContext`r^5 + ((
+             72 $CellContext`a^4) $CellContext`r) (4 $CellContext`M + 
+            9 $CellContext`r) + ((
+             16 $CellContext`a^2) $CellContext`r^3) ((-88) $CellContext`M + 
+            15 $CellContext`r) + ($CellContext`a^2 ((-99) $CellContext`a^4 + \
+((96 $CellContext`a^2) $CellContext`r) (4 $CellContext`M + 
+               5 $CellContext`r) + (
+               16 $CellContext`r^3) ((-88) $CellContext`M + 
+               45 $CellContext`r))) 
+           Cos[2 $CellContext`theta] - ((6 $CellContext`a^4) (
+            3 $CellContext`a^2 + (4 $CellContext`r) ((-4) $CellContext`M + 
+              7 $CellContext`r))) 
+          Cos[4 $CellContext`theta] + (3 $CellContext`a^6) 
+           Cos[6 $CellContext`theta]), (((
+            6 $CellContext`a^2) $CellContext`M) ($CellContext`a^2 + 
+            2 $CellContext`r^2 + $CellContext`a^2 
+             Cos[2 $CellContext`theta])^(-5)) (((
+              48 $CellContext`r^4) ((-5) $CellContext`M + 
+              2 $CellContext`r) + ((8 $CellContext`a^2) $CellContext`r^2) (
+              16 $CellContext`M + 9 $CellContext`r) - $CellContext`a^4 (
+             5 $CellContext`M + 51 $CellContext`r)) 
+           Sin[2 $CellContext`theta] - ((
+            4 $CellContext`a^2) ($CellContext`a^2 ($CellContext`M + 
+              6 $CellContext`r) + $CellContext`r^2 ((-16) $CellContext`M + 
+              9 $CellContext`r))) 
+          Sin[4 $CellContext`theta] + ($CellContext`a^4 (-$CellContext`M + \
+$CellContext`r)) Sin[6 $CellContext`theta]), 
+         0}, {($CellContext`M ($CellContext`a^2 + 
+            2 $CellContext`r^2 + $CellContext`a^2 
+             Cos[2 $CellContext`theta])^(-5)) (
+          78 $CellContext`a^6 + ((16 $CellContext`a^2) (88 $CellContext`M - 
+             15 $CellContext`r)) $CellContext`r^3 + (
+            64 $CellContext`r^5) ((-8) $CellContext`M + 3 $CellContext`r) - ((
+            72 $CellContext`a^4) $CellContext`r) (4 $CellContext`M + 
+           9 $CellContext`r) + ($CellContext`a^2 (
+             99 $CellContext`a^4 + (
+               16 (88 $CellContext`M - 
+                45 $CellContext`r)) $CellContext`r^3 - ((
+               96 $CellContext`a^2) $CellContext`r) (4 $CellContext`M + 
+              5 $CellContext`r))) 
+           Cos[2 $CellContext`theta] + ((6 $CellContext`a^4) (
+             3 $CellContext`a^2 + (4 $CellContext`r) ((-4) $CellContext`M + 
+               7 $CellContext`r))) Cos[4 $CellContext`theta] - (
+           3 $CellContext`a^6) Cos[6 $CellContext`theta]), 0, 
+         0, (((((-4) $CellContext`a) $CellContext`M) ($CellContext`a^2 + 
+             2 $CellContext`r^2 + $CellContext`a^2 
+              Cos[2 $CellContext`theta])^(-5)) (
+           27 $CellContext`a^6 + ((8 $CellContext`a^2) (44 $CellContext`M - 
+              15 $CellContext`r)) $CellContext`r^3 + (
+             8 $CellContext`r^5) ((-16) $CellContext`M + 
+             9 $CellContext`r) - ((9 $CellContext`a^4) $CellContext`r) (
+            8 $CellContext`M + 
+            23 $CellContext`r) + ((4 $CellContext`a^2) (
+              9 $CellContext`a^4 + (
+                4 (22 $CellContext`M - 
+                 15 $CellContext`r)) $CellContext`r^3 - ((
+                3 $CellContext`a^2) $CellContext`r) (8 $CellContext`M + 
+               15 $CellContext`r))) 
+            Cos[2 $CellContext`theta] + ((3 $CellContext`a^4) (
+              3 $CellContext`a^2 + $CellContext`r ((-8) $CellContext`M + 
+                9 $CellContext`r))) Cos[4 $CellContext`theta])) 
+         Sin[$CellContext`theta]^2}, {(((
+            6 $CellContext`a^2) $CellContext`M) ($CellContext`a^2 + 
+            2 $CellContext`r^2 + $CellContext`a^2 
+             Cos[2 $CellContext`theta])^(-5)) (((
+              48 (5 $CellContext`M - 2 $CellContext`r)) $CellContext`r^4 - ((
+              8 $CellContext`a^2) $CellContext`r^2) (16 $CellContext`M + 
+             9 $CellContext`r) + $CellContext`a^4 (5 $CellContext`M + 
+              51 $CellContext`r)) 
+           Sin[2 $CellContext`theta] + ((
+             4 $CellContext`a^2) ($CellContext`a^2 ($CellContext`M + 
+               6 $CellContext`r) + $CellContext`r^2 ((-16) $CellContext`M + 
+               9 $CellContext`r))) 
+           Sin[4 $CellContext`theta] + ($CellContext`a^4 ($CellContext`M - \
+$CellContext`r)) Sin[6 $CellContext`theta]), 0, 
+         0, (((Rational[
+             1, 2] $CellContext`a) $CellContext`M) ($CellContext`a^2 + 
+            2 $CellContext`r^2 + $CellContext`a^2 
+             Cos[2 $CellContext`theta])^(-5)) (((-2) (((16 $CellContext`a^2) (
+                35 $CellContext`M - 32 $CellContext`r)) $CellContext`r^4 + (
+               192 (3 $CellContext`M - $CellContext`r)) $CellContext`r^6 - ((
+               2 $CellContext`a^4) $CellContext`r^2) (274 $CellContext`M + 
+              65 $CellContext`r) + $CellContext`a^6 (23 $CellContext`M + 
+               223 $CellContext`r))) 
+           Sin[2 $CellContext`theta] - ((
+            2 $CellContext`a^2) ((8 $CellContext`r^4) ((-55) $CellContext`M + 
+              28 $CellContext`r) + ((
+               8 $CellContext`a^2) $CellContext`r^2) ((-26) $CellContext`M + 
+              41 $CellContext`r) + $CellContext`a^4 (17 $CellContext`M + 
+              79 $CellContext`r))) 
+          Sin[4 $CellContext`theta] + ((
+             2 $CellContext`a^4) (((-3) $CellContext`a^2) ($CellContext`M - 
+               7 $CellContext`r) - (44 $CellContext`M) $CellContext`r^2 + 
+             26 $CellContext`r^3)) 
+           Sin[6 $CellContext`theta] + ($CellContext`a^6 ($CellContext`M - \
+$CellContext`r)) Sin[8 $CellContext`theta])}, {
+        0, ((((4 $CellContext`a) $CellContext`M) ($CellContext`a^2 + 
+             2 $CellContext`r^2 + $CellContext`a^2 
+              Cos[2 $CellContext`theta])^(-5)) (
+           27 $CellContext`a^6 + ((8 $CellContext`a^2) (44 $CellContext`M - 
+              15 $CellContext`r)) $CellContext`r^3 + (
+             8 $CellContext`r^5) ((-16) $CellContext`M + 
+             9 $CellContext`r) - ((9 $CellContext`a^4) $CellContext`r) (
+            8 $CellContext`M + 
+            23 $CellContext`r) + ((4 $CellContext`a^2) (
+              9 $CellContext`a^4 + (
+                4 (22 $CellContext`M - 
+                 15 $CellContext`r)) $CellContext`r^3 - ((
+                3 $CellContext`a^2) $CellContext`r) (8 $CellContext`M + 
+               15 $CellContext`r))) 
+            Cos[2 $CellContext`theta] + ((3 $CellContext`a^4) (
+              3 $CellContext`a^2 + $CellContext`r ((-8) $CellContext`M + 
+                9 $CellContext`r))) Cos[4 $CellContext`theta])) 
+         Sin[$CellContext`theta]^2, ($CellContext`a^2 + 
+           2 $CellContext`r^2 + $CellContext`a^2 
+            Cos[2 $CellContext`theta])^(-5) ((($CellContext`a $CellContext`M) \
+(((16 $CellContext`a^2) (35 $CellContext`M - 
+                32 $CellContext`r)) $CellContext`r^4 + (
+               192 (3 $CellContext`M - $CellContext`r)) $CellContext`r^6 - ((
+               2 $CellContext`a^4) $CellContext`r^2) (274 $CellContext`M + 
+              65 $CellContext`r) + $CellContext`a^6 (23 $CellContext`M + 
+               223 $CellContext`r))) 
+           Sin[2 $CellContext`theta] + (($CellContext`a^3 $CellContext`M) ((
+               8 $CellContext`r^4) ((-55) $CellContext`M + 
+               28 $CellContext`r) + ((
+                8 $CellContext`a^2) $CellContext`r^2) ((-26) $CellContext`M + 
+               41 $CellContext`r) + $CellContext`a^4 (17 $CellContext`M + 
+               79 $CellContext`r))) 
+           Sin[4 $CellContext`theta] + (($CellContext`a^5 $CellContext`M) ((
+               3 $CellContext`a^2) ($CellContext`M - 7 $CellContext`r) + (
+               2 (22 $CellContext`M - 13 $CellContext`r)) $CellContext`r^2)) 
+           Sin[6 $CellContext`theta] + (((
+              Rational[
+               1, 2] $CellContext`a^7) $CellContext`M) (-$CellContext`M + \
+$CellContext`r)) Sin[8 $CellContext`theta]), 0}}, {{0, 0, 0, 0}, {0, 0, 0, 
+       0}, {0, 0, 0, 0}, {0, 0, 0, 
+       0}}, {{0, 0, 
+         0, (($CellContext`a $CellContext`M) ($CellContext`a^2 + 
+            2 $CellContext`r^2 + $CellContext`a^2 
+             Cos[2 $CellContext`theta])^(-4)) (((
+              48 $CellContext`r^4) ((-3) $CellContext`M + $CellContext`r) + ((
+               16 $CellContext`a^2) $CellContext`r^2) (7 $CellContext`M + 
+              2 $CellContext`r) - $CellContext`a^4 (5 $CellContext`M + 
+             43 $CellContext`r)) 
+           Sin[2 $CellContext`theta] - ((
+            4 $CellContext`a^2) ((2 $CellContext`r^2) ((-7) $CellContext`M + 
+              4 $CellContext`r) + $CellContext`a^2 ($CellContext`M + 
+              5 $CellContext`r))) 
+          Sin[4 $CellContext`theta] + ($CellContext`a^4 (-$CellContext`M + \
+$CellContext`r)) Sin[6 $CellContext`theta])}, {
+        0, 0, ((Rational[
+            1, 8] $CellContext`M) ($CellContext`r^2 + $CellContext`a^2 
+             Cos[$CellContext`theta]^2)^(-3)) (
+          9 $CellContext`a^4 - (48 $CellContext`a^2) $CellContext`r^2 + 
+          8 $CellContext`r^4 + ((12 $CellContext`a^2) ($CellContext`a^2 - 
+             4 $CellContext`r^2)) 
+           Cos[2 $CellContext`theta] + (3 $CellContext`a^4) 
+           Cos[4 $CellContext`theta]), 0}, {
+        0, ((Rational[-1, 
+             8] $CellContext`M) ($CellContext`r^2 + $CellContext`a^2 
+             Cos[$CellContext`theta]^2)^(-3)) (
+          9 $CellContext`a^4 - (48 $CellContext`a^2) $CellContext`r^2 + 
+          8 $CellContext`r^4 + ((12 $CellContext`a^2) ($CellContext`a^2 - 
+             4 $CellContext`r^2)) 
+           Cos[2 $CellContext`theta] + (3 $CellContext`a^4) 
+           Cos[4 $CellContext`theta]), 0, 
+         0}, {(($CellContext`a $CellContext`M) ($CellContext`a^2 + 
+            2 $CellContext`r^2 + $CellContext`a^2 
+             Cos[2 $CellContext`theta])^(-4)) (((
+              48 (3 $CellContext`M - $CellContext`r)) $CellContext`r^4 - ((
+              16 $CellContext`a^2) $CellContext`r^2) (7 $CellContext`M + 
+             2 $CellContext`r) + $CellContext`a^4 (5 $CellContext`M + 
+              43 $CellContext`r)) 
+           Sin[2 $CellContext`theta] + ((
+             4 $CellContext`a^2) ((2 $CellContext`r^2) ((-7) $CellContext`M + 
+               4 $CellContext`r) + $CellContext`a^2 ($CellContext`M + 
+               5 $CellContext`r))) 
+           Sin[4 $CellContext`theta] + ($CellContext`a^4 ($CellContext`M - \
+$CellContext`r)) Sin[6 $CellContext`theta]), 0, 0, 0}}, {{
+        0, ((((4 $CellContext`a) $CellContext`M) ($CellContext`a^2 + 
+             2 $CellContext`r^2 + $CellContext`a^2 
+              Cos[2 $CellContext`theta])^(-5)) (
+           27 $CellContext`a^6 + ((8 $CellContext`a^2) (44 $CellContext`M - 
+              15 $CellContext`r)) $CellContext`r^3 + (
+             8 $CellContext`r^5) ((-16) $CellContext`M + 
+             9 $CellContext`r) - ((9 $CellContext`a^4) $CellContext`r) (
+            8 $CellContext`M + 
+            23 $CellContext`r) + ((4 $CellContext`a^2) (
+              9 $CellContext`a^4 + (
+                4 (22 $CellContext`M - 
+                 15 $CellContext`r)) $CellContext`r^3 - ((
+                3 $CellContext`a^2) $CellContext`r) (8 $CellContext`M + 
+               15 $CellContext`r))) 
+            Cos[2 $CellContext`theta] + ((3 $CellContext`a^4) (
+              3 $CellContext`a^2 + $CellContext`r ((-8) $CellContext`M + 
+                9 $CellContext`r))) Cos[4 $CellContext`theta])) 
+         Sin[$CellContext`theta]^2, (($CellContext`a $CellContext`M) \
+($CellContext`a^2 + 
+            2 $CellContext`r^2 + $CellContext`a^2 
+             Cos[2 $CellContext`theta])^(-5)) ((
+            2 (((40 $CellContext`a^2) (8 $CellContext`M - 
+                5 $CellContext`r)) $CellContext`r^4 + (
+               48 (3 $CellContext`M - $CellContext`r)) $CellContext`r^6 + \
+$CellContext`a^6 (8 $CellContext`M + 
+               85 $CellContext`r) - ($CellContext`a^4 $CellContext`r^2) (
+              209 $CellContext`M + 100 $CellContext`r))) 
+           Sin[2 $CellContext`theta] + ((
+             2 $CellContext`a^2) ($CellContext`a^4 (5 $CellContext`M + 
+               19 $CellContext`r) + (
+               4 $CellContext`r^4) ((-50) $CellContext`M + 
+               23 $CellContext`r) + ((
+                4 $CellContext`a^2) $CellContext`r^2) ((-13) $CellContext`M + 
+               34 $CellContext`r))) 
+           Sin[4 $CellContext`theta] - (((
+             10 $CellContext`a^4) $CellContext`r) (
+            3 $CellContext`a^2 + $CellContext`r ((-7) $CellContext`M + 
+              4 $CellContext`r))) 
+          Sin[6 $CellContext`theta] + ($CellContext`a^6 (-$CellContext`M + \
+$CellContext`r)) Sin[8 $CellContext`theta]), 
+         0}, {(((((-4) $CellContext`a) $CellContext`M) ($CellContext`a^2 + 
+             2 $CellContext`r^2 + $CellContext`a^2 
+              Cos[2 $CellContext`theta])^(-5)) (
+           27 $CellContext`a^6 + ((8 $CellContext`a^2) (44 $CellContext`M - 
+              15 $CellContext`r)) $CellContext`r^3 + (
+             8 $CellContext`r^5) ((-16) $CellContext`M + 
+             9 $CellContext`r) - ((9 $CellContext`a^4) $CellContext`r) (
+            8 $CellContext`M + 
+            23 $CellContext`r) + ((4 $CellContext`a^2) (
+              9 $CellContext`a^4 + (
+                4 (22 $CellContext`M - 
+                 15 $CellContext`r)) $CellContext`r^3 - ((
+                3 $CellContext`a^2) $CellContext`r) (8 $CellContext`M + 
+               15 $CellContext`r))) 
+            Cos[2 $CellContext`theta] + ((3 $CellContext`a^4) (
+              3 $CellContext`a^2 + $CellContext`r ((-8) $CellContext`M + 
+                9 $CellContext`r))) Cos[4 $CellContext`theta])) 
+         Sin[$CellContext`theta]^2, 0, 
+         0, (((2 $CellContext`M) ($CellContext`a^2 + 
+             2 $CellContext`r^2 + $CellContext`a^2 
+              Cos[2 $CellContext`theta])^(-5)) (
+           2 (12 $CellContext`a^8 + ($CellContext`a^4 (88 $CellContext`M - 
+                75 $CellContext`r)) $CellContext`r^3 + 
+             8 $CellContext`r^8 + ((
+                8 $CellContext`a^2) $CellContext`r^5) ((-8) $CellContext`M + \
+$CellContext`r) - ((3 $CellContext`a^6) $CellContext`r) (4 $CellContext`M + 
+              27 $CellContext`r)) + ($CellContext`a^2 (
+              27 $CellContext`a^6 - (
+               280 $CellContext`a^2) $CellContext`r^4 + (
+                16 (8 $CellContext`M - 
+                 11 $CellContext`r)) $CellContext`r^5 - ((
+                3 $CellContext`a^4) $CellContext`r) (4 $CellContext`M + 
+               13 $CellContext`r))) 
+            Cos[2 $CellContext`theta] + (((
+               2 $CellContext`a^4) $CellContext`r) ((
+                11 $CellContext`r^2) ((-8) $CellContext`M + 
+                5 $CellContext`r) + (3 $CellContext`a^2) (4 $CellContext`M + 
+                19 $CellContext`r))) 
+            Cos[4 $CellContext`theta] - ((
+             3 $CellContext`a^6) ($CellContext`a^2 + $CellContext`r ((-4) \
+$CellContext`M + 3 $CellContext`r))) Cos[6 $CellContext`theta])) 
+         Sin[$CellContext`theta]^2}, {(($CellContext`a $CellContext`M) \
+($CellContext`a^2 + 
+            2 $CellContext`r^2 + $CellContext`a^2 
+             Cos[2 $CellContext`theta])^(-5)) ((
+            2 ((48 $CellContext`r^6) ((-3) $CellContext`M + $CellContext`r) + \
+((40 $CellContext`a^2) $CellContext`r^4) ((-8) $CellContext`M + 
+               5 $CellContext`r) - $CellContext`a^6 (8 $CellContext`M + 
+              85 $CellContext`r) + ($CellContext`a^4 $CellContext`r^2) (
+               209 $CellContext`M + 100 $CellContext`r))) 
+           Sin[2 $CellContext`theta] - ((
+            2 $CellContext`a^2) ($CellContext`a^4 (5 $CellContext`M + 
+              19 $CellContext`r) + (4 $CellContext`r^4) ((-50) $CellContext`M + 
+              23 $CellContext`r) + ((
+               4 $CellContext`a^2) $CellContext`r^2) ((-13) $CellContext`M + 
+              34 $CellContext`r))) 
+          Sin[4 $CellContext`theta] + (((
+              10 $CellContext`a^4) $CellContext`r) (
+             3 $CellContext`a^2 + $CellContext`r ((-7) $CellContext`M + 
+               4 $CellContext`r))) 
+           Sin[6 $CellContext`theta] + ($CellContext`a^6 ($CellContext`M - \
+$CellContext`r)) Sin[8 $CellContext`theta]), 0, 
+         0, (((((24 $CellContext`a^2) $CellContext`M) 
+            Cos[$CellContext`theta]) ($CellContext`a^2 + 
+             2 $CellContext`r^2 + $CellContext`a^2 
+              Cos[2 $CellContext`theta])^(-5)) (((4 $CellContext`a^2) (
+              10 $CellContext`M - 13 $CellContext`r)) $CellContext`r^4 + (
+             24 (3 $CellContext`M - $CellContext`r)) $CellContext`r^6 - \
+($CellContext`a^4 $CellContext`r^2) (55 $CellContext`M + 
+            6 $CellContext`r) + $CellContext`a^6 (3 $CellContext`M + 
+             22 $CellContext`r) + ((
+              4 $CellContext`a^2) ($CellContext`a^4 ($CellContext`M + 
+                5 $CellContext`r) + $CellContext`r^4 ((-20) $CellContext`M + 
+                11 $CellContext`r) + ($CellContext`a^2 $CellContext`r^2) \
+((-13) $CellContext`M + 16 $CellContext`r))) 
+            Cos[2 $CellContext`theta] + ($CellContext`a^4 ($CellContext`a^2 \
+($CellContext`M - 2 $CellContext`r) + (3 $CellContext`M - 
+                2 $CellContext`r) $CellContext`r^2)) 
+            Cos[4 $CellContext`theta])) Sin[$CellContext`theta]^3}, {
+        0, (((2 $CellContext`M) ($CellContext`a^2 + 
+             2 $CellContext`r^2 + $CellContext`a^2 
+              Cos[2 $CellContext`theta])^(-5)) ((-2) (
+             12 $CellContext`a^8 + ($CellContext`a^4 (88 $CellContext`M - 
+                75 $CellContext`r)) $CellContext`r^3 + 
+             8 $CellContext`r^8 + ((
+                8 $CellContext`a^2) $CellContext`r^5) ((-8) $CellContext`M + \
+$CellContext`r) - ((3 $CellContext`a^6) $CellContext`r) (4 $CellContext`M + 
+              27 $CellContext`r)) + ($CellContext`a^2 ((-27) $CellContext`a^6 + \
+(280 $CellContext`a^2) $CellContext`r^4 + (
+                16 $CellContext`r^5) ((-8) $CellContext`M + 
+                11 $CellContext`r) + ((3 $CellContext`a^4) $CellContext`r) (
+                4 $CellContext`M + 13 $CellContext`r))) 
+            Cos[2 $CellContext`theta] - (((
+              2 $CellContext`a^4) $CellContext`r) ((
+               11 $CellContext`r^2) ((-8) $CellContext`M + 
+               5 $CellContext`r) + (3 $CellContext`a^2) (4 $CellContext`M + 
+               19 $CellContext`r))) 
+           Cos[4 $CellContext`theta] + ((
+              3 $CellContext`a^6) ($CellContext`a^2 + $CellContext`r ((-4) \
+$CellContext`M + 3 $CellContext`r))) Cos[6 $CellContext`theta])) 
+         Sin[$CellContext`theta]^2, ((((((-24) $CellContext`a^2) \
+$CellContext`M) 
+            Cos[$CellContext`theta]) ($CellContext`a^2 + 
+             2 $CellContext`r^2 + $CellContext`a^2 
+              Cos[2 $CellContext`theta])^(-5)) (((4 $CellContext`a^2) (
+              10 $CellContext`M - 13 $CellContext`r)) $CellContext`r^4 + (
+             24 (3 $CellContext`M - $CellContext`r)) $CellContext`r^6 - \
+($CellContext`a^4 $CellContext`r^2) (55 $CellContext`M + 
+            6 $CellContext`r) + $CellContext`a^6 (3 $CellContext`M + 
+             22 $CellContext`r) + ((
+              4 $CellContext`a^2) ($CellContext`a^4 ($CellContext`M + 
+                5 $CellContext`r) + $CellContext`r^4 ((-20) $CellContext`M + 
+                11 $CellContext`r) + ($CellContext`a^2 $CellContext`r^2) \
+((-13) $CellContext`M + 16 $CellContext`r))) 
+            Cos[2 $CellContext`theta] + ($CellContext`a^4 ($CellContext`a^2 \
+($CellContext`M - 2 $CellContext`r) + (3 $CellContext`M - 
+                2 $CellContext`r) $CellContext`r^2)) 
+            Cos[4 $CellContext`theta])) Sin[$CellContext`theta]^3, 0}}}, {{{
+        0, ((((((-48) $CellContext`a^2) $CellContext`M) $CellContext`r) \
+($CellContext`a^2 + 
+             2 $CellContext`r^2 + $CellContext`a^2 
+              Cos[2 $CellContext`theta])^(-5)) (7 $CellContext`a^2 - 
+           18 $CellContext`r^2 + (7 $CellContext`a^2) 
+            Cos[2 $CellContext`theta])) 
+         Sin[2 $CellContext`theta], ((
+           2 $CellContext`M) ($CellContext`a^2 + 
+            2 $CellContext`r^2 + $CellContext`a^2 
+             Cos[2 $CellContext`theta])^(-5)) (
+          24 $CellContext`a^6 + ((
+             352 $CellContext`a^2) $CellContext`M) $CellContext`r^3 + (
+            16 $CellContext`r^5) ((-8) $CellContext`M + 3 $CellContext`r) - ((
+            18 $CellContext`a^4) $CellContext`r) (4 $CellContext`M + 
+           13 $CellContext`r) + ($CellContext`a^2 (
+             27 $CellContext`a^4 + (
+               16 (22 $CellContext`M - 
+                15 $CellContext`r)) $CellContext`r^3 - ((
+               24 $CellContext`a^2) $CellContext`r) (4 $CellContext`M + 
+              5 $CellContext`r))) 
+           Cos[2 $CellContext`theta] + (((
+              6 $CellContext`a^4) $CellContext`r) ((-4) $CellContext`M + 
+             19 $CellContext`r)) Cos[4 $CellContext`theta] - (
+           3 $CellContext`a^6) Cos[6 $CellContext`theta]), 
+         0}, {(((((
+              48 $CellContext`a^2) $CellContext`M) $CellContext`r) \
+($CellContext`a^2 + 
+             2 $CellContext`r^2 + $CellContext`a^2 
+              Cos[2 $CellContext`theta])^(-5)) (7 $CellContext`a^2 - 
+           18 $CellContext`r^2 + (7 $CellContext`a^2) 
+            Cos[2 $CellContext`theta])) Sin[2 $CellContext`theta], 0, 
+         0, (((((12 $CellContext`a) $CellContext`M) $CellContext`r) \
+($CellContext`a^2 + 
+             2 $CellContext`r^2 + $CellContext`a^2 
+              Cos[2 $CellContext`theta])^(-5)) ((-13) $CellContext`a^4 + (
+             36 $CellContext`a^2) $CellContext`r^2 + 
+           16 $CellContext`r^4 - ((4 $CellContext`a^2) (2 $CellContext`a^2 + 
+             9 $CellContext`r^2)) 
+           Cos[2 $CellContext`theta] + (5 $CellContext`a^4) 
+            Cos[4 $CellContext`theta])) 
+         Sin[2 $CellContext`theta]}, {((
+           2 $CellContext`M) ($CellContext`a^2 + 
+            2 $CellContext`r^2 + $CellContext`a^2 
+             Cos[2 $CellContext`theta])^(-5)) ((-24) $CellContext`a^6 - ((
+            352 $CellContext`a^2) $CellContext`M) $CellContext`r^3 + (
+            16 (8 $CellContext`M - 3 $CellContext`r)) $CellContext`r^5 + ((
+             18 $CellContext`a^4) $CellContext`r) (4 $CellContext`M + 
+            13 $CellContext`r) + ($CellContext`a^2 ((-27) $CellContext`a^4 + \
+((24 $CellContext`a^2) $CellContext`r) (4 $CellContext`M + 
+               5 $CellContext`r) + (
+               16 $CellContext`r^3) ((-22) $CellContext`M + 
+               15 $CellContext`r))) 
+           Cos[2 $CellContext`theta] + (((6 $CellContext`a^4) (
+              4 $CellContext`M - 19 $CellContext`r)) $CellContext`r) 
+           Cos[4 $CellContext`theta] + (3 $CellContext`a^6) 
+           Cos[6 $CellContext`theta]), 0, 
+         0, ((((4 $CellContext`a) $CellContext`M) ($CellContext`a^2 + 
+             2 $CellContext`r^2 + $CellContext`a^2 
+              Cos[2 $CellContext`theta])^(-5)) (
+           27 $CellContext`a^6 + ((8 $CellContext`a^2) (22 $CellContext`M - 
+              15 $CellContext`r)) $CellContext`r^3 + (
+             8 $CellContext`r^5) ((-8) $CellContext`M + 9 $CellContext`r) - ((
+             9 $CellContext`a^4) $CellContext`r) (4 $CellContext`M + 
+            23 $CellContext`r) + ((4 $CellContext`a^2) (
+              9 $CellContext`a^4 + (
+                4 (11 $CellContext`M - 
+                 15 $CellContext`r)) $CellContext`r^3 - ((
+                3 $CellContext`a^2) $CellContext`r) (4 $CellContext`M + 
+               15 $CellContext`r))) 
+            Cos[2 $CellContext`theta] + ((3 $CellContext`a^4) (
+              3 $CellContext`a^2 + $CellContext`r ((-4) $CellContext`M + 
+                9 $CellContext`r))) Cos[4 $CellContext`theta])) 
+         Sin[$CellContext`theta]^2}, {
+        0, (((((12 $CellContext`a) $CellContext`M) $CellContext`r) \
+($CellContext`a^2 + 
+             2 $CellContext`r^2 + $CellContext`a^2 
+              Cos[2 $CellContext`theta])^(-5)) (
+           13 $CellContext`a^4 - (36 $CellContext`a^2) $CellContext`r^2 - 
+           16 $CellContext`r^4 + ((4 $CellContext`a^2) (2 $CellContext`a^2 + 
+              9 $CellContext`r^2)) Cos[2 $CellContext`theta] - (
+            5 $CellContext`a^4) Cos[4 $CellContext`theta])) 
+         Sin[2 $CellContext`theta], (((((-4) $CellContext`a) $CellContext`M) \
+($CellContext`a^2 + 
+             2 $CellContext`r^2 + $CellContext`a^2 
+              Cos[2 $CellContext`theta])^(-5)) (
+           27 $CellContext`a^6 + ((8 $CellContext`a^2) (22 $CellContext`M - 
+              15 $CellContext`r)) $CellContext`r^3 + (
+             8 $CellContext`r^5) ((-8) $CellContext`M + 9 $CellContext`r) - ((
+             9 $CellContext`a^4) $CellContext`r) (4 $CellContext`M + 
+            23 $CellContext`r) + ((4 $CellContext`a^2) (
+              9 $CellContext`a^4 + (
+                4 (11 $CellContext`M - 
+                 15 $CellContext`r)) $CellContext`r^3 - ((
+                3 $CellContext`a^2) $CellContext`r) (4 $CellContext`M + 
+               15 $CellContext`r))) 
+            Cos[2 $CellContext`theta] + ((3 $CellContext`a^4) (
+              3 $CellContext`a^2 + $CellContext`r ((-4) $CellContext`M + 
+                9 $CellContext`r))) Cos[4 $CellContext`theta])) 
+         Sin[$CellContext`theta]^2, 0}}, {{
+        0, 0, 0, (((((
+              48 $CellContext`a) $CellContext`M) $CellContext`r) \
+($CellContext`a^2 - 
+            2 $CellContext`r^2 + $CellContext`a^2 
+             Cos[2 $CellContext`theta])) ($CellContext`a^2 + 
+            2 $CellContext`r^2 + $CellContext`a^2 
+             Cos[2 $CellContext`theta])^(-4)) Sin[2 $CellContext`theta]}, {
+        0, 0, (((
+            Rational[
+             1, 8] $CellContext`M) ($CellContext`a^2 + $CellContext`r ((-2) \
+$CellContext`M + $CellContext`r))^(-2)) ($CellContext`r^2 + $CellContext`a^2 
+             Cos[$CellContext`theta]^2)^(-3)) ((-9) $CellContext`a^6 + (
+            57 $CellContext`a^4) $CellContext`r^2 + (
+            8 (4 $CellContext`M - 3 $CellContext`r)) $CellContext`r^5 + ((
+             56 $CellContext`a^2) $CellContext`r^3) ((-2) $CellContext`M + \
+$CellContext`r) + ((
+             4 $CellContext`a^2) ((-3) $CellContext`a^4 + (
+               15 $CellContext`a^2) $CellContext`r^2 + (
+               4 $CellContext`r^3) ((-7) $CellContext`M + 4 $CellContext`r))) 
+           Cos[2 $CellContext`theta] + ((
+             3 $CellContext`a^4) (-$CellContext`a^2 + $CellContext`r^2)) 
+           Cos[4 $CellContext`theta]), 0}, {
+        0, (((Rational[
+             1, 8] $CellContext`M) ($CellContext`a^2 + $CellContext`r ((-2) \
+$CellContext`M + $CellContext`r))^(-2)) ($CellContext`r^2 + $CellContext`a^2 
+             Cos[$CellContext`theta]^2)^(-3)) (
+          9 $CellContext`a^6 - (
+           57 $CellContext`a^4) $CellContext`r^2 + ((56 $CellContext`a^2) (
+             2 $CellContext`M - $CellContext`r)) $CellContext`r^3 + (
+            8 $CellContext`r^5) ((-4) $CellContext`M + 
+            3 $CellContext`r) + ((4 $CellContext`a^2) (
+             3 $CellContext`a^4 - (
+              15 $CellContext`a^2) $CellContext`r^2 + (
+               4 (7 $CellContext`M - 4 $CellContext`r)) $CellContext`r^3)) 
+           Cos[2 $CellContext`theta] + (((
+              3 $CellContext`a^4) ($CellContext`a - $CellContext`r)) \
+($CellContext`a + $CellContext`r)) Cos[4 $CellContext`theta]), 0, 
+         0}, {((((((-48) $CellContext`a) $CellContext`M) $CellContext`r) \
+($CellContext`a^2 - 
+            2 $CellContext`r^2 + $CellContext`a^2 
+             Cos[2 $CellContext`theta])) ($CellContext`a^2 + 
+            2 $CellContext`r^2 + $CellContext`a^2 
+             Cos[2 $CellContext`theta])^(-4)) Sin[2 $CellContext`theta], 0, 0,
+          0}}, {{0, 0, 0, 0}, {0, 0, 0, 0}, {0, 0, 0, 0}, {0, 0, 0, 
+       0}}, {{0, (((((
+              
+              12 $CellContext`a) $CellContext`M) $CellContext`r) \
+($CellContext`a^2 + 
+             2 $CellContext`r^2 + $CellContext`a^2 
+              Cos[2 $CellContext`theta])^(-5)) (
+           19 $CellContext`a^4 - (36 $CellContext`a^2) $CellContext`r^2 - 
+           32 $CellContext`r^4 + ((4 $CellContext`a^2) (4 $CellContext`a^2 + 
+              9 $CellContext`r^2)) Cos[2 $CellContext`theta] - (
+            3 $CellContext`a^4) Cos[4 $CellContext`theta])) 
+         Sin[2 $CellContext`theta], (((((-4) $CellContext`a) $CellContext`M) \
+($CellContext`a^2 + 
+             2 $CellContext`r^2 + $CellContext`a^2 
+              Cos[2 $CellContext`theta])^(-5)) (
+           27 $CellContext`a^6 + ((8 $CellContext`a^2) (22 $CellContext`M - 
+              15 $CellContext`r)) $CellContext`r^3 + (
+             8 $CellContext`r^5) ((-8) $CellContext`M + 9 $CellContext`r) - ((
+             9 $CellContext`a^4) $CellContext`r) (4 $CellContext`M + 
+            23 $CellContext`r) + ((4 $CellContext`a^2) (
+              9 $CellContext`a^4 + (
+                4 (11 $CellContext`M - 
+                 15 $CellContext`r)) $CellContext`r^3 - ((
+                3 $CellContext`a^2) $CellContext`r) (4 $CellContext`M + 
+               15 $CellContext`r))) 
+            Cos[2 $CellContext`theta] + ((3 $CellContext`a^4) (
+              3 $CellContext`a^2 + $CellContext`r ((-4) $CellContext`M + 
+                9 $CellContext`r))) Cos[4 $CellContext`theta])) 
+         Sin[$CellContext`theta]^2, 
+         0}, {(((((
+              12 $CellContext`a) $CellContext`M) $CellContext`r) \
+($CellContext`a^2 + 
+             2 $CellContext`r^2 + $CellContext`a^2 
+              Cos[2 $CellContext`theta])^(-5)) ((-19) $CellContext`a^4 + (
+             36 $CellContext`a^2) $CellContext`r^2 + 
+           32 $CellContext`r^4 - ((4 $CellContext`a^2) (4 $CellContext`a^2 + 
+             9 $CellContext`r^2)) 
+           Cos[2 $CellContext`theta] + (3 $CellContext`a^4) 
+            Cos[4 $CellContext`theta])) Sin[2 $CellContext`theta], 0, 
+         0, (((((((-24) $CellContext`a^2) $CellContext`M) $CellContext`r) 
+            Cos[$CellContext`theta]) ($CellContext`a^2 + 
+             2 $CellContext`r^2 + $CellContext`a^2 
+              Cos[2 $CellContext`theta])^(-5)) ((-25) $CellContext`a^4 + (
+             36 $CellContext`a^2) $CellContext`r^2 + 
+           48 $CellContext`r^4 - ((12 $CellContext`a^2) (2 $CellContext`a^2 + 
+             3 $CellContext`r^2)) 
+           Cos[2 $CellContext`theta] + $CellContext`a^4 
+            Cos[4 $CellContext`theta])) 
+         Sin[$CellContext`theta]^3}, {((((
+             4 $CellContext`a) $CellContext`M) ($CellContext`a^2 + 
+             2 $CellContext`r^2 + $CellContext`a^2 
+              Cos[2 $CellContext`theta])^(-5)) (
+           27 $CellContext`a^6 + ((8 $CellContext`a^2) (22 $CellContext`M - 
+              15 $CellContext`r)) $CellContext`r^3 + (
+             8 $CellContext`r^5) ((-8) $CellContext`M + 9 $CellContext`r) - ((
+             9 $CellContext`a^4) $CellContext`r) (4 $CellContext`M + 
+            23 $CellContext`r) + ((4 $CellContext`a^2) (
+              9 $CellContext`a^4 + (
+                4 (11 $CellContext`M - 
+                 15 $CellContext`r)) $CellContext`r^3 - ((
+                3 $CellContext`a^2) $CellContext`r) (4 $CellContext`M + 
+               15 $CellContext`r))) 
+            Cos[2 $CellContext`theta] + ((3 $CellContext`a^4) (
+              3 $CellContext`a^2 + $CellContext`r ((-4) $CellContext`M + 
+                9 $CellContext`r))) Cos[4 $CellContext`theta])) 
+         Sin[$CellContext`theta]^2, 0, 
+         0, (($CellContext`M ($CellContext`a^2 + 
+             2 $CellContext`r^2 + $CellContext`a^2 
+              Cos[2 $CellContext`theta])^(-5)) ((-78) $CellContext`a^8 - 
+           64 $CellContext`r^8 + ((16 $CellContext`a^2) $CellContext`r^5) (
+             8 $CellContext`M + 
+             5 $CellContext`r) + ((6 $CellContext`a^6) $CellContext`r) (
+             4 $CellContext`M + 
+             69 $CellContext`r) + ((
+              8 $CellContext`a^4) $CellContext`r^3) ((-22) $CellContext`M + 
+             75 $CellContext`r) + ($CellContext`a^2 ((-99) $CellContext`a^6 + \
+(880 $CellContext`a^2) $CellContext`r^4 + (
+                16 $CellContext`r^5) ((-8) $CellContext`M + 
+                35 $CellContext`r) + ((3 $CellContext`a^4) $CellContext`r) (
+                4 $CellContext`M + 61 $CellContext`r))) 
+            Cos[2 $CellContext`theta] - ((2 $CellContext`a^4) (
+             9 $CellContext`a^4 + (4 $CellContext`r^3) ((-22) $CellContext`M + 
+               25 $CellContext`r) + ((3 $CellContext`a^2) $CellContext`r) (
+               4 $CellContext`M + 37 $CellContext`r))) 
+           Cos[4 $CellContext`theta] + ((
+              3 $CellContext`a^6) ($CellContext`a^2 + $CellContext`r ((-4) \
+$CellContext`M + 3 $CellContext`r))) Cos[6 $CellContext`theta])) 
+         Sin[$CellContext`theta]^2}, {
+        0, ((((((24 $CellContext`a^2) $CellContext`M) $CellContext`r) 
+            Cos[$CellContext`theta]) ($CellContext`a^2 + 
+             2 $CellContext`r^2 + $CellContext`a^2 
+              Cos[2 $CellContext`theta])^(-5)) ((-25) $CellContext`a^4 + (
+             36 $CellContext`a^2) $CellContext`r^2 + 
+           48 $CellContext`r^4 - ((12 $CellContext`a^2) (2 $CellContext`a^2 + 
+             3 $CellContext`r^2)) 
+           Cos[2 $CellContext`theta] + $CellContext`a^4 
+            Cos[4 $CellContext`theta])) 
+         Sin[$CellContext`theta]^3, (($CellContext`M ($CellContext`a^2 + 
+             2 $CellContext`r^2 + $CellContext`a^2 
+              Cos[2 $CellContext`theta])^(-5)) (
+           78 $CellContext`a^8 + ((8 $CellContext`a^4) (22 $CellContext`M - 
+              75 $CellContext`r)) $CellContext`r^3 + 
+           64 $CellContext`r^8 - ((16 $CellContext`a^2) $CellContext`r^5) (
+            8 $CellContext`M + 
+            5 $CellContext`r) - ((6 $CellContext`a^6) $CellContext`r) (
+            4 $CellContext`M + 
+            69 $CellContext`r) + ($CellContext`a^2 (
+              99 $CellContext`a^6 - (
+               880 $CellContext`a^2) $CellContext`r^4 + (
+                16 (8 $CellContext`M - 
+                 35 $CellContext`r)) $CellContext`r^5 - ((
+                3 $CellContext`a^4) $CellContext`r) (4 $CellContext`M + 
+               61 $CellContext`r))) 
+            Cos[2 $CellContext`theta] + ((2 $CellContext`a^4) (
+              9 $CellContext`a^4 + (4 $CellContext`r^3) ((-22) $CellContext`M + 
+                25 $CellContext`r) + ((3 $CellContext`a^2) $CellContext`r) (
+                4 $CellContext`M + 37 $CellContext`r))) 
+            Cos[4 $CellContext`theta] - ((
+             3 $CellContext`a^6) ($CellContext`a^2 + $CellContext`r ((-4) \
+$CellContext`M + 3 $CellContext`r))) Cos[6 $CellContext`theta])) 
+         Sin[$CellContext`theta]^2, 0}}}, {{{
+        0, 0, 0, ((
+           4 $CellContext`M) ($CellContext`a^2 + 
+            2 $CellContext`r^2 + $CellContext`a^2 
+             Cos[2 $CellContext`theta])^(-5)) (((-512) $CellContext`M) \
+$CellContext`r^5 + ((16 $CellContext`r^3) (17 $CellContext`M + 
+             6 $CellContext`r)) ($CellContext`a^2 + 
+            2 $CellContext`r^2 + $CellContext`a^2 
+             Cos[2 $CellContext`theta]) - ((
+            24 $CellContext`r) ($CellContext`M + 
+            2 $CellContext`r)) ($CellContext`a^2 + 
+            2 $CellContext`r^2 + $CellContext`a^2 
+             Cos[2 $CellContext`theta])^2 + 
+          3 ($CellContext`a^2 + 
+             2 $CellContext`r^2 + $CellContext`a^2 
+              Cos[2 $CellContext`theta])^3)}, {
+        0, 0, ((($CellContext`a $CellContext`M) ($CellContext`a^2 + \
+$CellContext`r ((-2) $CellContext`M + $CellContext`r))^(-2)) \
+($CellContext`a^2 + 
+            2 $CellContext`r^2 + $CellContext`a^2 
+             Cos[2 $CellContext`theta])^(-4)) (((((
+               192 ($CellContext`a - $CellContext`r)) $CellContext`r) \
+($CellContext`a + $CellContext`r)) ($CellContext`a^2 + $CellContext`r ((-2) \
+$CellContext`M + $CellContext`r))^2) 
+           Cot[$CellContext`theta] + ($CellContext`a^2 ($CellContext`a^4 (
+               5 $CellContext`M - 
+               149 $CellContext`r) + ((16 $CellContext`a^2) (
+                29 $CellContext`M - 8 $CellContext`r)) $CellContext`r^2 + (
+               48 $CellContext`r^3) ((-8) $CellContext`M^2 + (
+                 3 $CellContext`M) $CellContext`r + $CellContext`r^2))) 
+           Sin[2 $CellContext`theta] + ((
+             4 $CellContext`a^4) ($CellContext`a^2 ($CellContext`M - 
+               7 $CellContext`r) + (
+               2 (5 $CellContext`M - 2 $CellContext`r)) $CellContext`r^2)) 
+           Sin[4 $CellContext`theta] + ($CellContext`a^6 ($CellContext`M - \
+$CellContext`r)) Sin[6 $CellContext`theta]), 0}, {
+        0, ((($CellContext`a $CellContext`M) ($CellContext`a^2 + \
+$CellContext`r ((-2) $CellContext`M + $CellContext`r))^(-2)) \
+($CellContext`a^2 + 
+            2 $CellContext`r^2 + $CellContext`a^2 
+             Cos[2 $CellContext`theta])^(-4)) (((((
+               192 $CellContext`r) (-$CellContext`a + $CellContext`r)) \
+($CellContext`a + $CellContext`r)) ($CellContext`a^2 + $CellContext`r ((-2) \
+$CellContext`M + $CellContext`r))^2) 
+           Cot[$CellContext`theta] + ($CellContext`a^2 (((
+                16 $CellContext`a^2) $CellContext`r^2) ((-29) $CellContext`M + 
+               8 $CellContext`r) + $CellContext`a^4 ((-5) $CellContext`M + 
+               149 $CellContext`r) - (
+              48 $CellContext`r^3) ((-8) $CellContext`M^2 + (
+                3 $CellContext`M) $CellContext`r + $CellContext`r^2))) 
+           Sin[2 $CellContext`theta] - ((
+            4 $CellContext`a^4) ($CellContext`a^2 ($CellContext`M - 
+              7 $CellContext`r) + (
+              2 (5 $CellContext`M - 2 $CellContext`r)) $CellContext`r^2)) 
+          Sin[4 $CellContext`theta] + ($CellContext`a^6 (-$CellContext`M + \
+$CellContext`r)) Sin[6 $CellContext`theta]), 0, 
+         0}, {((
+           4 $CellContext`M) ($CellContext`a^2 + 
+            2 $CellContext`r^2 + $CellContext`a^2 
+             Cos[2 $CellContext`theta])^(-5)) ((
+            512 $CellContext`M) $CellContext`r^5 - ((16 $CellContext`r^3) (
+            17 $CellContext`M + 6 $CellContext`r)) ($CellContext`a^2 + 
+           2 $CellContext`r^2 + $CellContext`a^2 
+            Cos[2 $CellContext`theta]) + ((24 $CellContext`r) ($CellContext`M + 
+             2 $CellContext`r)) ($CellContext`a^2 + 
+             2 $CellContext`r^2 + $CellContext`a^2 
+              Cos[2 $CellContext`theta])^2 - 
+          3 ($CellContext`a^2 + 
+            2 $CellContext`r^2 + $CellContext`a^2 
+             Cos[2 $CellContext`theta])^3), 0, 0, 0}}, {{
+        0, ((((6 $CellContext`a) $CellContext`M) ($CellContext`a^2 + \
+$CellContext`r ((-2) $CellContext`M + $CellContext`r))^(-2)) \
+($CellContext`a^2 + 
+            2 $CellContext`r^2 + $CellContext`a^2 
+             Cos[2 $CellContext`theta])^(-4)) ((-9) $CellContext`a^6 + (
+            81 $CellContext`a^4) $CellContext`r^2 + (
+            8 (8 $CellContext`M - 5 $CellContext`r)) $CellContext`r^5 + ((
+             32 $CellContext`a^2) $CellContext`r^3) ((-5) $CellContext`M + 
+            2 $CellContext`r) + ((
+             4 $CellContext`a^2) ((-3) $CellContext`a^4 + (
+               21 $CellContext`a^2) $CellContext`r^2 - (
+              40 $CellContext`M) $CellContext`r^3 + 22 $CellContext`r^4)) 
+           Cos[2 $CellContext`theta] + ((
+             3 $CellContext`a^4) (-$CellContext`a^2 + $CellContext`r^2)) 
+           Cos[4 $CellContext`theta]), ((((
+             2 $CellContext`a) $CellContext`M) ($CellContext`a^2 + \
+$CellContext`r ((-2) $CellContext`M + $CellContext`r))^(-2)) \
+($CellContext`a^2 + 
+            2 $CellContext`r^2 + $CellContext`a^2 
+             Cos[2 $CellContext`theta])^(-4)) (((((
+               96 $CellContext`r) (-$CellContext`a + $CellContext`r)) \
+($CellContext`a + $CellContext`r)) ($CellContext`a^2 + $CellContext`r ((-2) \
+$CellContext`M + $CellContext`r))^2) 
+           Cot[$CellContext`theta] + ($CellContext`a^2 ((
+               5 $CellContext`a^4) ($CellContext`M - $CellContext`r) + ((
+                16 $CellContext`a^2) $CellContext`r^2) ((-7) $CellContext`M + 
+               10 $CellContext`r) + (48 $CellContext`r^3) (
+               4 $CellContext`M^2 - (9 $CellContext`M) $CellContext`r + 
+               4 $CellContext`r^2))) 
+           Sin[2 $CellContext`theta] + ((
+             4 $CellContext`a^4) ($CellContext`a^2 ($CellContext`M - 
+               7 $CellContext`r) + (
+               2 (5 $CellContext`M - 2 $CellContext`r)) $CellContext`r^2)) 
+           Sin[4 $CellContext`theta] + ($CellContext`a^6 ($CellContext`M - \
+$CellContext`r)) Sin[6 $CellContext`theta]), 
+         0}, {((((
+             6 $CellContext`a) $CellContext`M) ($CellContext`a^2 + \
+$CellContext`r ((-2) $CellContext`M + $CellContext`r))^(-2)) \
+($CellContext`a^2 + 
+            2 $CellContext`r^2 + $CellContext`a^2 
+             Cos[2 $CellContext`theta])^(-4)) (
+          9 $CellContext`a^6 - (
+           81 $CellContext`a^4) $CellContext`r^2 + ((32 $CellContext`a^2) (
+             5 $CellContext`M - 2 $CellContext`r)) $CellContext`r^3 + (
+            8 $CellContext`r^5) ((-8) $CellContext`M + 
+            5 $CellContext`r) + ((4 $CellContext`a^2) (
+             3 $CellContext`a^4 - (
+              21 $CellContext`a^2) $CellContext`r^2 + (
+               40 $CellContext`M) $CellContext`r^3 - 22 $CellContext`r^4)) 
+           Cos[2 $CellContext`theta] + (((
+              3 $CellContext`a^4) ($CellContext`a - $CellContext`r)) \
+($CellContext`a + $CellContext`r)) Cos[4 $CellContext`theta]), 0, 
+         0, (($CellContext`M ($CellContext`a^2 + $CellContext`r ((-2) \
+$CellContext`M + $CellContext`r))^(-2)) ($CellContext`a^2 + 
+            2 $CellContext`r^2 + $CellContext`a^2 
+             Cos[2 $CellContext`theta])^(-4)) (
+          2 ((-12) $CellContext`a^8 + (
+              93 $CellContext`a^6) $CellContext`r^2 - (
+             16 $CellContext`a^2) $CellContext`r^6 + (
+              8 (4 $CellContext`M - 
+               3 $CellContext`r)) $CellContext`r^7 + ($CellContext`a^4 \
+$CellContext`r^3) ((-204) $CellContext`M + 
+              131 $CellContext`r)) + ($CellContext`a^2 ((-27) \
+$CellContext`a^6 + (99 $CellContext`a^4) $CellContext`r^2 + (
+               32 $CellContext`r^5) ((-12) $CellContext`M + 
+               7 $CellContext`r) + ((
+                8 $CellContext`a^2) $CellContext`r^3) ((-28) $CellContext`M + 
+               39 $CellContext`r))) 
+           Cos[2 $CellContext`theta] - (((
+             2 $CellContext`a^4) $CellContext`r^2) (
+            45 $CellContext`a^2 + $CellContext`r ((-92) $CellContext`M + 
+              47 $CellContext`r))) 
+          Cos[4 $CellContext`theta] + (((
+              3 $CellContext`a^6) ($CellContext`a - $CellContext`r)) \
+($CellContext`a + $CellContext`r)) 
+           Cos[6 $CellContext`theta])}, {((((
+             2 $CellContext`a) $CellContext`M) ($CellContext`a^2 + \
+$CellContext`r ((-2) $CellContext`M + $CellContext`r))^(-2)) \
+($CellContext`a^2 + 
+            2 $CellContext`r^2 + $CellContext`a^2 
+             Cos[2 $CellContext`theta])^(-4)) (((((
+               96 ($CellContext`a - $CellContext`r)) $CellContext`r) \
+($CellContext`a + $CellContext`r)) ($CellContext`a^2 + $CellContext`r ((-2) \
+$CellContext`M + $CellContext`r))^2) 
+           Cot[$CellContext`theta] + ($CellContext`a^2 (((
+                16 $CellContext`a^2) (7 $CellContext`M - 
+                10 $CellContext`r)) $CellContext`r^2 + (
+               5 $CellContext`a^4) (-$CellContext`M + $CellContext`r) - (
+              48 $CellContext`r^3) (
+              4 $CellContext`M^2 - (9 $CellContext`M) $CellContext`r + 
+              4 $CellContext`r^2))) 
+           Sin[2 $CellContext`theta] - ((
+            4 $CellContext`a^4) ($CellContext`a^2 ($CellContext`M - 
+              7 $CellContext`r) + (
+              2 (5 $CellContext`M - 2 $CellContext`r)) $CellContext`r^2)) 
+          Sin[4 $CellContext`theta] + ($CellContext`a^6 (-$CellContext`M + \
+$CellContext`r)) Sin[6 $CellContext`theta]), 0, 
+         0, ((((2 $CellContext`a^2) $CellContext`M) ($CellContext`a^2 + \
+$CellContext`r ((-2) $CellContext`M + $CellContext`r))^(-2)) \
+($CellContext`a^2 + 
+            2 $CellContext`r^2 + $CellContext`a^2 
+             Cos[2 $CellContext`theta])^(-4)) (($CellContext`a^6 (
+              5 $CellContext`M - 
+              72 $CellContext`r) + ((
+               171 $CellContext`a^4) $CellContext`M) $CellContext`r^2 + ((
+               48 (4 $CellContext`M - 
+                3 $CellContext`r)) ($CellContext`M - $CellContext`r)) \
+$CellContext`r^5 + ((
+               8 $CellContext`a^2) $CellContext`r^3) ((-12) $CellContext`M^2 - \
+(28 $CellContext`M) $CellContext`r + 27 $CellContext`r^2)) 
+           Sin[2 $CellContext`theta] + ((
+             4 $CellContext`a^2) ($CellContext`a^4 ($CellContext`M - 
+               9 $CellContext`r) + ((3 $CellContext`a^2) (7 $CellContext`M - 
+                6 $CellContext`r)) $CellContext`r^2 + $CellContext`r^3 ((-12) \
+$CellContext`M^2 + (26 $CellContext`M) $CellContext`r - 9 $CellContext`r^2))) 
+           Sin[4 $CellContext`theta] + ((($CellContext`a^4 $CellContext`M) \
+($CellContext`a - $CellContext`r)) ($CellContext`a + $CellContext`r)) 
+           Sin[6 $CellContext`theta])}, {
+        0, (($CellContext`M ($CellContext`a^2 + $CellContext`r ((-2) \
+$CellContext`M + $CellContext`r))^(-2)) ($CellContext`a^2 + 
+            2 $CellContext`r^2 + $CellContext`a^2 
+             Cos[2 $CellContext`theta])^(-4)) (
+          2 (12 $CellContext`a^8 - (
+             93 $CellContext`a^6) $CellContext`r^2 + ($CellContext`a^4 (
+               204 $CellContext`M - 131 $CellContext`r)) $CellContext`r^3 + (
+              16 $CellContext`a^2) $CellContext`r^6 + (
+              8 $CellContext`r^7) ((-4) $CellContext`M + 
+              3 $CellContext`r)) + ($CellContext`a^2 (
+             27 $CellContext`a^6 - (
+              99 $CellContext`a^4) $CellContext`r^2 + ((8 $CellContext`a^2) (
+                28 $CellContext`M - 39 $CellContext`r)) $CellContext`r^3 + (
+               32 (12 $CellContext`M - 7 $CellContext`r)) $CellContext`r^5)) 
+           Cos[2 $CellContext`theta] + (((
+              2 $CellContext`a^4) $CellContext`r^2) (
+             45 $CellContext`a^2 + $CellContext`r ((-92) $CellContext`M + 
+               47 $CellContext`r))) 
+           Cos[4 $CellContext`theta] - (((
+             3 $CellContext`a^6) ($CellContext`a - $CellContext`r)) \
+($CellContext`a + $CellContext`r)) 
+          Cos[6 $CellContext`theta]), ((((
+             2 $CellContext`a^2) $CellContext`M) ($CellContext`a^2 + \
+$CellContext`r ((-2) $CellContext`M + $CellContext`r))^(-2)) \
+($CellContext`a^2 + 
+            2 $CellContext`r^2 + $CellContext`a^2 
+             Cos[2 $CellContext`theta])^(-4)) (((((-171) $CellContext`a^4) \
+$CellContext`M) $CellContext`r^2 - ((
+              48 (4 $CellContext`M - 
+               3 $CellContext`r)) ($CellContext`M - $CellContext`r)) \
+$CellContext`r^5 + $CellContext`a^6 ((-5) $CellContext`M + 
+              72 $CellContext`r) + ((8 $CellContext`a^2) $CellContext`r^3) (
+              12 $CellContext`M^2 + (28 $CellContext`M) $CellContext`r - 
+              27 $CellContext`r^2)) 
+           Sin[2 $CellContext`theta] + ((
+             4 $CellContext`a^2) ((-$CellContext`a^4) ($CellContext`M - 
+               9 $CellContext`r) + ((
+                3 $CellContext`a^2) $CellContext`r^2) ((-7) $CellContext`M + 
+               6 $CellContext`r) + $CellContext`r^3 (
+               12 $CellContext`M^2 - (26 $CellContext`M) $CellContext`r + 
+               9 $CellContext`r^2))) 
+           Sin[
+            4 $CellContext`theta] + (($CellContext`a^4 $CellContext`M) \
+(-$CellContext`a^2 + $CellContext`r^2)) Sin[6 $CellContext`theta]), 0}}, {{
+        0, ((($CellContext`a $CellContext`M) ($CellContext`a^2 + \
+$CellContext`r ((-2) $CellContext`M + $CellContext`r))^(-2)) \
+($CellContext`a^2 + 
+            2 $CellContext`r^2 + $CellContext`a^2 
+             Cos[2 $CellContext`theta])^(-4)) (((((
+               384 $CellContext`r) (-$CellContext`a + $CellContext`r)) \
+($CellContext`a + $CellContext`r)) ($CellContext`a^2 + $CellContext`r ((-2) \
+$CellContext`M + $CellContext`r))^2) 
+           Cot[$CellContext`theta] + ($CellContext`a^2 (((
+                16 $CellContext`a^2) $CellContext`r^2) ((-43) $CellContext`M + 
+               28 $CellContext`r) + $CellContext`a^4 (5 $CellContext`M + 
+               139 $CellContext`r) + (48 $CellContext`r^3) (
+               16 $CellContext`M^2 - (21 $CellContext`M) $CellContext`r + 
+               7 $CellContext`r^2))) 
+           Sin[2 $CellContext`theta] + ((
+             4 $CellContext`a^4) ($CellContext`a^2 ($CellContext`M - 
+               7 $CellContext`r) + (
+               2 (5 $CellContext`M - 2 $CellContext`r)) $CellContext`r^2)) 
+           Sin[4 $CellContext`theta] + ($CellContext`a^6 ($CellContext`M - \
+$CellContext`r)) 
+           Sin[6 $CellContext`theta]), (((
+            18 $CellContext`a) $CellContext`M) ($CellContext`a^2 + 
+            2 $CellContext`r^2 + $CellContext`a^2 
+             Cos[2 $CellContext`theta])^(-4)) (
+          3 $CellContext`a^4 - (24 $CellContext`a^2) $CellContext`r^2 + 
+          8 $CellContext`r^4 + ((4 $CellContext`a^2) ($CellContext`a^2 - 
+             6 $CellContext`r^2)) 
+           Cos[2 $CellContext`theta] + $CellContext`a^4 
+           Cos[4 $CellContext`theta]), 
+         0}, {((($CellContext`a $CellContext`M) ($CellContext`a^2 + \
+$CellContext`r ((-2) $CellContext`M + $CellContext`r))^(-2)) \
+($CellContext`a^2 + 
+            2 $CellContext`r^2 + $CellContext`a^2 
+             Cos[2 $CellContext`theta])^(-4)) (((((
+               384 ($CellContext`a - $CellContext`r)) $CellContext`r) \
+($CellContext`a + $CellContext`r)) ($CellContext`a^2 + $CellContext`r ((-2) \
+$CellContext`M + $CellContext`r))^2) 
+           Cot[$CellContext`theta] - ($CellContext`a^2 (((
+               16 $CellContext`a^2) $CellContext`r^2) ((-43) $CellContext`M + 
+              28 $CellContext`r) + $CellContext`a^4 (5 $CellContext`M + 
+              139 $CellContext`r) + (48 $CellContext`r^3) (
+              16 $CellContext`M^2 - (21 $CellContext`M) $CellContext`r + 
+              7 $CellContext`r^2))) 
+          Sin[2 $CellContext`theta] - ((
+            4 $CellContext`a^4) ($CellContext`a^2 ($CellContext`M - 
+              7 $CellContext`r) + (
+              2 (5 $CellContext`M - 2 $CellContext`r)) $CellContext`r^2)) 
+          Sin[4 $CellContext`theta] + ($CellContext`a^6 (-$CellContext`M + \
+$CellContext`r)) Sin[6 $CellContext`theta]), 0, 
+         0, ((($CellContext`a^2 $CellContext`M) ($CellContext`a^2 + \
+$CellContext`r ((-2) $CellContext`M + $CellContext`r))^(-2)) \
+($CellContext`a^2 + 
+            2 $CellContext`r^2 + $CellContext`a^2 
+             Cos[2 $CellContext`theta])^(-4)) (($CellContext`a^6 (
+              5 $CellContext`M - 
+              144 $CellContext`r) + ((
+               459 $CellContext`a^4) $CellContext`M) $CellContext`r^2 + (
+              48 $CellContext`r^5) (
+              16 $CellContext`M^2 - (19 $CellContext`M) $CellContext`r + 
+              6 $CellContext`r^2) + ((
+               16 $CellContext`a^2) $CellContext`r^3) ((-24) $CellContext`M^2 - \
+(32 $CellContext`M) $CellContext`r + 27 $CellContext`r^2)) 
+           Sin[2 $CellContext`theta] + ((
+             4 $CellContext`a^2) ($CellContext`a^4 ($CellContext`M - 
+               18 $CellContext`r) + ((3 $CellContext`a^2) (19 $CellContext`M - 
+                12 $CellContext`r)) $CellContext`r^2 - (2 $CellContext`r^3) (
+              24 $CellContext`M^2 - (31 $CellContext`M) $CellContext`r + 
+              9 $CellContext`r^2))) 
+           Sin[4 $CellContext`theta] + ((($CellContext`a^4 $CellContext`M) \
+($CellContext`a - $CellContext`r)) ($CellContext`a + $CellContext`r)) 
+           Sin[6 $CellContext`theta])}, {((((-18) $CellContext`a) \
+$CellContext`M) ($CellContext`a^2 + 
+            2 $CellContext`r^2 + $CellContext`a^2 
+             Cos[2 $CellContext`theta])^(-4)) (
+          3 $CellContext`a^4 - (24 $CellContext`a^2) $CellContext`r^2 + 
+          8 $CellContext`r^4 + ((4 $CellContext`a^2) ($CellContext`a^2 - 
+             6 $CellContext`r^2)) 
+           Cos[2 $CellContext`theta] + $CellContext`a^4 
+           Cos[4 $CellContext`theta]), 0, 
+         0, ((Rational[1, 2] $CellContext`M) ($CellContext`a^2 + 
+            2 $CellContext`r^2 + $CellContext`a^2 
+             Cos[2 $CellContext`theta])^(-4)) (
+          78 $CellContext`a^6 - (432 $CellContext`a^4) $CellContext`r^2 - (
+           208 $CellContext`a^2) $CellContext`r^4 + 
+          64 $CellContext`r^6 + ($CellContext`a^2 (
+             99 $CellContext`a^4 - (288 $CellContext`a^2) $CellContext`r^2 - 
+             496 $CellContext`r^4)) 
+           Cos[2 $CellContext`theta] + ((
+             18 $CellContext`a^4) ($CellContext`a^2 + 8 $CellContext`r^2)) 
+           Cos[4 $CellContext`theta] - (3 $CellContext`a^6) 
+          Cos[6 $CellContext`theta])}, {
+        0, ((($CellContext`a^2 $CellContext`M) ($CellContext`a^2 + \
+$CellContext`r ((-2) $CellContext`M + $CellContext`r))^(-2)) \
+($CellContext`a^2 + 
+            2 $CellContext`r^2 + $CellContext`a^2 
+             Cos[2 $CellContext`theta])^(-4)) (((((-459) $CellContext`a^4) \
+$CellContext`M) $CellContext`r^2 + $CellContext`a^6 ((-5) $CellContext`M + 
+              144 $CellContext`r) + ((16 $CellContext`a^2) $CellContext`r^3) (
+              24 $CellContext`M^2 + (32 $CellContext`M) $CellContext`r - 
+              27 $CellContext`r^2) - (48 $CellContext`r^5) (
+             16 $CellContext`M^2 - (19 $CellContext`M) $CellContext`r + 
+             6 $CellContext`r^2)) 
+           Sin[2 $CellContext`theta] - ((
+            4 $CellContext`a^2) ($CellContext`a^4 ($CellContext`M - 
+              18 $CellContext`r) + ((3 $CellContext`a^2) (19 $CellContext`M - 
+               12 $CellContext`r)) $CellContext`r^2 - (2 $CellContext`r^3) (
+             24 $CellContext`M^2 - (31 $CellContext`M) $CellContext`r + 
+             9 $CellContext`r^2))) 
+          Sin[4 $CellContext`theta] + (($CellContext`a^4 $CellContext`M) \
+(-$CellContext`a^2 + $CellContext`r^2)) Sin[6 $CellContext`theta]), ((
+           Rational[1, 2] $CellContext`M) ($CellContext`a^2 + 
+            2 $CellContext`r^2 + $CellContext`a^2 
+             Cos[2 $CellContext`theta])^(-4)) ((-78) $CellContext`a^6 + (
+            432 $CellContext`a^4) $CellContext`r^2 + (
+            208 $CellContext`a^2) $CellContext`r^4 - 
+          64 $CellContext`r^6 + ((-99) $CellContext`a^6 + (
+              288 $CellContext`a^4) $CellContext`r^2 + (
+              496 $CellContext`a^2) $CellContext`r^4) 
+           Cos[2 $CellContext`theta] - ((
+            18 $CellContext`a^4) ($CellContext`a^2 + 8 $CellContext`r^2)) 
+          Cos[4 $CellContext`theta] + (3 $CellContext`a^6) 
+           Cos[6 $CellContext`theta]), 0}}, {{
+        0, 0, 0, (((((
+              16 $CellContext`a) $CellContext`M^2) $CellContext`r) \
+($CellContext`a^2 + 
+             2 $CellContext`r^2 + $CellContext`a^2 
+              Cos[2 $CellContext`theta])^(-5)) (
+           9 $CellContext`a^4 - (44 $CellContext`a^2) $CellContext`r^2 + 
+           16 $CellContext`r^4 + ((4 $CellContext`a^2) (3 $CellContext`a^2 - 
+              11 $CellContext`r^2)) 
+            Cos[2 $CellContext`theta] + (3 $CellContext`a^4) 
+            Cos[4 $CellContext`theta])) Sin[$CellContext`theta]^2}, {
+        0, 0, ((($CellContext`a^2 $CellContext`M^2) ($CellContext`a^2 + \
+$CellContext`r ((-2) $CellContext`M + $CellContext`r))^(-2)) \
+($CellContext`a^2 + 
+            2 $CellContext`r^2 + $CellContext`a^2 
+             Cos[2 $CellContext`theta])^(-4)) ((-(
+             5 $CellContext`a^6 - (
+              117 $CellContext`a^4) $CellContext`r^2 + ((
+                64 $CellContext`a^2) $CellContext`r^3) (
+               3 $CellContext`M + $CellContext`r) + (
+               48 $CellContext`r^5) ((-8) $CellContext`M + 5 $CellContext`r)))
+             Sin[2 $CellContext`theta] - ((
+            4 $CellContext`a^2) ($CellContext`a^4 - (
+             15 $CellContext`a^2) $CellContext`r^2 + (
+              24 $CellContext`M) $CellContext`r^3 - 10 $CellContext`r^4)) 
+          Sin[4 $CellContext`theta] + ($CellContext`a^4 (-$CellContext`a^2 + \
+$CellContext`r^2)) Sin[6 $CellContext`theta]), 0}, {
+        0, ((($CellContext`a^2 $CellContext`M^2) ($CellContext`a^2 + \
+$CellContext`r ((-2) $CellContext`M + $CellContext`r))^(-2)) \
+($CellContext`a^2 + 
+            2 $CellContext`r^2 + $CellContext`a^2 
+             Cos[2 $CellContext`theta])^(-4)) ((
+            5 $CellContext`a^6 - (
+             117 $CellContext`a^4) $CellContext`r^2 + ((
+               64 $CellContext`a^2) $CellContext`r^3) (
+              3 $CellContext`M + $CellContext`r) + (
+              48 $CellContext`r^5) ((-8) $CellContext`M + 5 $CellContext`r)) 
+           Sin[2 $CellContext`theta] + ((
+             4 $CellContext`a^2) ($CellContext`a^4 - (
+              15 $CellContext`a^2) $CellContext`r^2 + (
+               24 $CellContext`M) $CellContext`r^3 - 10 $CellContext`r^4)) 
+           Sin[4 $CellContext`theta] + (($CellContext`a^4 ($CellContext`a - \
+$CellContext`r)) ($CellContext`a + $CellContext`r)) 
+           Sin[6 $CellContext`theta]), 0, 
+         0}, {((((((-16) $CellContext`a) $CellContext`M^2) $CellContext`r) \
+($CellContext`a^2 + 
+             2 $CellContext`r^2 + $CellContext`a^2 
+              Cos[2 $CellContext`theta])^(-5)) (
+           9 $CellContext`a^4 - (44 $CellContext`a^2) $CellContext`r^2 + 
+           16 $CellContext`r^4 + ((4 $CellContext`a^2) (3 $CellContext`a^2 - 
+              11 $CellContext`r^2)) 
+            Cos[2 $CellContext`theta] + (3 $CellContext`a^4) 
+            Cos[4 $CellContext`theta])) Sin[$CellContext`theta]^2, 0, 0, 
+         0}}}}], "wrap" -> Composition[OutputSizeLimit`Defer, 
+     Function[{OutputSizeLimit`Dump`x$}, 
+      MatrixForm[OutputSizeLimit`Dump`x$]]], "version" -> 1|>,
+  "OutputSizeLimitTemplate"]], "Output",
+ CellChangeTimes->{3.9205184817897577`*^9},
+ CellLabel->
+  "Out[12]//MatrixForm=",ExpressionUUID->"ae959e5b-33cf-40e3-8c38-\
+630c36815548"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Dgkt", "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"D", "[", 
+     RowBox[{
+      RowBox[{"TensorValues", "[", "gk", "]"}], ",", "\[Theta]"}], "]"}], "/.", 
+    RowBox[{"{", 
+     RowBox[{"\[Theta]", "->", "theta"}], "}"}]}], "//", 
+   "Simplify"}]}]], "Input",
+ CellChangeTimes->{{3.920546228685286*^9, 3.9205462362405767`*^9}, {
+  3.9205463019486113`*^9, 3.9205463164351273`*^9}, {3.9205464334959393`*^9, 
+  3.920546446288571*^9}, {3.92054752672628*^9, 3.9205475309633093`*^9}, {
+  3.920589581559354*^9, 3.920589613600524*^9}},
+ CellLabel->"In[12]:=",ExpressionUUID->"b3e6ae9e-9b41-4956-bcbf-bb7b253f3425"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox[
+      RowBox[{"2", " ", 
+       SuperscriptBox["a", "2"], " ", "M", " ", "r", " ", 
+       RowBox[{"Sin", "[", 
+        RowBox[{"2", " ", "theta"}], "]"}]}], 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{
+         SuperscriptBox["r", "2"], "+", 
+         RowBox[{
+          SuperscriptBox["a", "2"], " ", 
+          SuperscriptBox[
+           RowBox[{"Cos", "[", "theta", "]"}], "2"]}]}], ")"}], "2"]], ",", 
+     "0", ",", "0", ",", 
+     RowBox[{"-", 
+      FractionBox[
+       RowBox[{"2", " ", "a", " ", "M", " ", "r", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          SuperscriptBox["a", "2"], "+", 
+          SuperscriptBox["r", "2"]}], ")"}], " ", 
+        RowBox[{"Sin", "[", 
+         RowBox[{"2", " ", "theta"}], "]"}]}], 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{
+          SuperscriptBox["r", "2"], "+", 
+          RowBox[{
+           SuperscriptBox["a", "2"], " ", 
+           SuperscriptBox[
+            RowBox[{"Cos", "[", "theta", "]"}], "2"]}]}], ")"}], "2"]]}]}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", 
+     RowBox[{"-", 
+      FractionBox[
+       RowBox[{"2", " ", 
+        SuperscriptBox["a", "2"], " ", 
+        RowBox[{"Cos", "[", "theta", "]"}], " ", 
+        RowBox[{"Sin", "[", "theta", "]"}]}], 
+       RowBox[{
+        SuperscriptBox["a", "2"], "-", 
+        RowBox[{"2", " ", "M", " ", "r"}], "+", 
+        SuperscriptBox["r", "2"]}]]}], ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", 
+     RowBox[{
+      RowBox[{"-", "2"}], " ", 
+      SuperscriptBox["a", "2"], " ", 
+      RowBox[{"Cos", "[", "theta", "]"}], " ", 
+      RowBox[{"Sin", "[", "theta", "]"}]}], ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", 
+      FractionBox[
+       RowBox[{"2", " ", "a", " ", "M", " ", "r", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          SuperscriptBox["a", "2"], "+", 
+          SuperscriptBox["r", "2"]}], ")"}], " ", 
+        RowBox[{"Sin", "[", 
+         RowBox[{"2", " ", "theta"}], "]"}]}], 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{
+          SuperscriptBox["r", "2"], "+", 
+          RowBox[{
+           SuperscriptBox["a", "2"], " ", 
+           SuperscriptBox[
+            RowBox[{"Cos", "[", "theta", "]"}], "2"]}]}], ")"}], "2"]]}], ",",
+      "0", ",", "0", ",", 
+     FractionBox[
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"3", " ", 
+          SuperscriptBox["a", "6"]}], "+", 
+         RowBox[{"10", " ", 
+          SuperscriptBox["a", "4"], " ", "M", " ", "r"}], "+", 
+         RowBox[{"11", " ", 
+          SuperscriptBox["a", "4"], " ", 
+          SuperscriptBox["r", "2"]}], "+", 
+         RowBox[{"16", " ", 
+          SuperscriptBox["a", "2"], " ", "M", " ", 
+          SuperscriptBox["r", "3"]}], "+", 
+         RowBox[{"16", " ", 
+          SuperscriptBox["a", "2"], " ", 
+          SuperscriptBox["r", "4"]}], "+", 
+         RowBox[{"8", " ", 
+          SuperscriptBox["r", "6"]}], "+", 
+         RowBox[{"4", " ", 
+          SuperscriptBox["a", "2"], " ", 
+          RowBox[{"(", 
+           RowBox[{
+            SuperscriptBox["a", "2"], "+", 
+            RowBox[{"2", " ", 
+             SuperscriptBox["r", "2"]}]}], ")"}], " ", 
+          RowBox[{"(", 
+           RowBox[{
+            SuperscriptBox["a", "2"], "+", 
+            RowBox[{"r", " ", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"-", "2"}], " ", "M"}], "+", "r"}], ")"}]}]}], ")"}], 
+          " ", 
+          RowBox[{"Cos", "[", 
+           RowBox[{"2", " ", "theta"}], "]"}]}], "+", 
+         RowBox[{
+          SuperscriptBox["a", "4"], " ", 
+          RowBox[{"(", 
+           RowBox[{
+            SuperscriptBox["a", "2"], "-", 
+            RowBox[{"2", " ", "M", " ", "r"}], "+", 
+            SuperscriptBox["r", "2"]}], ")"}], " ", 
+          RowBox[{"Cos", "[", 
+           RowBox[{"4", " ", "theta"}], "]"}]}]}], ")"}], " ", 
+       RowBox[{"Sin", "[", 
+        RowBox[{"2", " ", "theta"}], "]"}]}], 
+      RowBox[{"8", " ", 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{
+          SuperscriptBox["r", "2"], "+", 
+          RowBox[{
+           SuperscriptBox["a", "2"], " ", 
+           SuperscriptBox[
+            RowBox[{"Cos", "[", "theta", "]"}], "2"]}]}], ")"}], "2"]}]]}], 
+    "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.9205462367774057`*^9, {3.920546303677596*^9, 3.9205463168694687`*^9}, 
+   3.920546446845601*^9, 3.920547531965876*^9, {3.920589585286911*^9, 
+   3.9205896140718822`*^9}},
+ CellLabel->"Out[12]=",ExpressionUUID->"018b8b28-685b-4a33-bada-47c4c93e79cf"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Dgkt", "[", 
+  RowBox[{"[", 
+   RowBox[{"4", ",", "4"}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.920589603350031*^9, 3.92058960797022*^9}},
+ CellLabel->"In[13]:=",ExpressionUUID->"d570479b-e19b-4e6e-93ee-2a41d1869118"],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"3", " ", 
+      SuperscriptBox["a", "6"]}], "+", 
+     RowBox[{"10", " ", 
+      SuperscriptBox["a", "4"], " ", "M", " ", "r"}], "+", 
+     RowBox[{"11", " ", 
+      SuperscriptBox["a", "4"], " ", 
+      SuperscriptBox["r", "2"]}], "+", 
+     RowBox[{"16", " ", 
+      SuperscriptBox["a", "2"], " ", "M", " ", 
+      SuperscriptBox["r", "3"]}], "+", 
+     RowBox[{"16", " ", 
+      SuperscriptBox["a", "2"], " ", 
+      SuperscriptBox["r", "4"]}], "+", 
+     RowBox[{"8", " ", 
+      SuperscriptBox["r", "6"]}], "+", 
+     RowBox[{"4", " ", 
+      SuperscriptBox["a", "2"], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        SuperscriptBox["a", "2"], "+", 
+        RowBox[{"2", " ", 
+         SuperscriptBox["r", "2"]}]}], ")"}], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        SuperscriptBox["a", "2"], "+", 
+        RowBox[{"r", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"-", "2"}], " ", "M"}], "+", "r"}], ")"}]}]}], ")"}], " ", 
+      RowBox[{"Cos", "[", 
+       RowBox[{"2", " ", "theta"}], "]"}]}], "+", 
+     RowBox[{
+      SuperscriptBox["a", "4"], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        SuperscriptBox["a", "2"], "-", 
+        RowBox[{"2", " ", "M", " ", "r"}], "+", 
+        SuperscriptBox["r", "2"]}], ")"}], " ", 
+      RowBox[{"Cos", "[", 
+       RowBox[{"4", " ", "theta"}], "]"}]}]}], ")"}], " ", 
+   RowBox[{"Sin", "[", 
+    RowBox[{"2", " ", "theta"}], "]"}]}], 
+  RowBox[{"8", " ", 
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{
+      SuperscriptBox["r", "2"], "+", 
+      RowBox[{
+       SuperscriptBox["a", "2"], " ", 
+       SuperscriptBox[
+        RowBox[{"Cos", "[", "theta", "]"}], "2"]}]}], ")"}], 
+    "2"]}]]], "Output",
+ CellChangeTimes->{{3.920589608512268*^9, 3.920589616269196*^9}},
+ CellLabel->"Out[13]=",ExpressionUUID->"55e6f705-b4ae-42cb-96e5-9b64c6c9d355"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"\[CapitalDelta]", "=", 
+   RowBox[{
+    RowBox[{"r", "^", "2"}], "-", 
+    RowBox[{"2", "*", "M", "*", "r"}], "+", 
+    RowBox[{"a", "^", "2"}]}]}], ";", " ", 
+  RowBox[{"\[CapitalSigma]", "=", " ", 
+   RowBox[{
+    RowBox[{"r", "^", "2"}], "+", 
+    RowBox[{
+     RowBox[{"a", "^", "2"}], "*", 
+     RowBox[{
+      RowBox[{"Cos", "[", "\[Theta]", "]"}], "^", "2"}]}]}]}], ";"}]], "Input",\
+
+ CellChangeTimes->{{3.920593448318852*^9, 3.92059350076723*^9}, {
+  3.9205935786820097`*^9, 3.920593639321239*^9}},
+ CellLabel->"In[16]:=",ExpressionUUID->"bb01890d-8b52-42b7-b7d2-f57739f5756f"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"gk", "=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", 
+       RowBox[{"(", 
+        RowBox[{"1", "-", 
+         RowBox[{"2", " ", "M", " ", 
+          RowBox[{"r", "/", "\[CapitalSigma]"}]}]}], ")"}]}], ",", "0", ",", 
+      "0", ",", 
+      RowBox[{
+       RowBox[{"-", 
+        RowBox[{"(", 
+         RowBox[{"2", " ", "a", " ", "M", " ", "r", " ", 
+          RowBox[{
+           RowBox[{"Sin", "[", "\[Theta]", "]"}], "^", "2"}]}], ")"}]}], "/", 
+       "\[CapitalSigma]"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", 
+      RowBox[{"\[CapitalSigma]", "/", "\[CapitalDelta]"}], ",", "0", ",", 
+      "0"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "0", ",", " ", "\[CapitalSigma]", ",", "0"}], "}"}], 
+    ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", 
+        RowBox[{"(", 
+         RowBox[{"2", " ", "a", " ", "M", " ", "r", " ", 
+          RowBox[{
+           RowBox[{"Sin", "[", "\[Theta]", "]"}], "^", "2"}]}], ")"}]}], "/", 
+       "\[CapitalSigma]"}], ",", "0", ",", "0", ",", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"Sin", "[", "\[Theta]", "]"}], "^", "2"}], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"a", "^", "2"}], "+", 
+            RowBox[{"r", "^", "2"}]}], ")"}], "+", " ", 
+          RowBox[{"2", " ", "M", " ", 
+           RowBox[{"a", "^", "2"}], " ", "r", " ", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"Sin", "[", "\[Theta]", "]"}], "^", "2"}], "/", 
+            "\[CapitalSigma]"}]}]}], ")"}]}], ")"}]}], "}"}]}], 
+   "}"}]}]], "Input",
+ CellChangeTimes->{{3.920593441794235*^9, 3.9205934429479303`*^9}, {
+  3.9205935295035057`*^9, 3.920593574691951*^9}, {3.920593645783345*^9, 
+  3.920593793717551*^9}},
+ CellLabel->"In[17]:=",ExpressionUUID->"bab8162a-4dc3-4208-8786-24db87017f1f"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", "1"}], "+", 
+      FractionBox[
+       RowBox[{"2", " ", "M", " ", "r"}], 
+       RowBox[{
+        SuperscriptBox["r", "2"], "+", 
+        RowBox[{
+         SuperscriptBox["a", "2"], " ", 
+         SuperscriptBox[
+          RowBox[{"Cos", "[", "\[Theta]", "]"}], "2"]}]}]]}], ",", "0", ",", 
+     "0", ",", 
+     RowBox[{"-", 
+      FractionBox[
+       RowBox[{"2", " ", "a", " ", "M", " ", "r", " ", 
+        SuperscriptBox[
+         RowBox[{"Sin", "[", "\[Theta]", "]"}], "2"]}], 
+       RowBox[{
+        SuperscriptBox["r", "2"], "+", 
+        RowBox[{
+         SuperscriptBox["a", "2"], " ", 
+         SuperscriptBox[
+          RowBox[{"Cos", "[", "\[Theta]", "]"}], "2"]}]}]]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", 
+     FractionBox[
+      RowBox[{
+       SuperscriptBox["r", "2"], "+", 
+       RowBox[{
+        SuperscriptBox["a", "2"], " ", 
+        SuperscriptBox[
+         RowBox[{"Cos", "[", "\[Theta]", "]"}], "2"]}]}], 
+      RowBox[{
+       SuperscriptBox["a", "2"], "-", 
+       RowBox[{"2", " ", "M", " ", "r"}], "+", 
+       SuperscriptBox["r", "2"]}]], ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", 
+     RowBox[{
+      SuperscriptBox["r", "2"], "+", 
+      RowBox[{
+       SuperscriptBox["a", "2"], " ", 
+       SuperscriptBox[
+        RowBox[{"Cos", "[", "\[Theta]", "]"}], "2"]}]}], ",", "0"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", 
+      FractionBox[
+       RowBox[{"2", " ", "a", " ", "M", " ", "r", " ", 
+        SuperscriptBox[
+         RowBox[{"Sin", "[", "\[Theta]", "]"}], "2"]}], 
+       RowBox[{
+        SuperscriptBox["r", "2"], "+", 
+        RowBox[{
+         SuperscriptBox["a", "2"], " ", 
+         SuperscriptBox[
+          RowBox[{"Cos", "[", "\[Theta]", "]"}], "2"]}]}]]}], ",", "0", ",", 
+     "0", ",", 
+     RowBox[{
+      SuperscriptBox[
+       RowBox[{"Sin", "[", "\[Theta]", "]"}], "2"], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        SuperscriptBox["a", "2"], "+", 
+        SuperscriptBox["r", "2"], "+", 
+        FractionBox[
+         RowBox[{"2", " ", 
+          SuperscriptBox["a", "2"], " ", "M", " ", "r", " ", 
+          SuperscriptBox[
+           RowBox[{"Sin", "[", "\[Theta]", "]"}], "2"]}], 
+         RowBox[{
+          SuperscriptBox["r", "2"], "+", 
+          RowBox[{
+           SuperscriptBox["a", "2"], " ", 
+           SuperscriptBox[
+            RowBox[{"Cos", "[", "\[Theta]", "]"}], "2"]}]}]]}], ")"}]}]}], 
+    "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.9205937969613457`*^9, 3.920593824291601*^9}},
+ CellLabel->"Out[17]=",ExpressionUUID->"4cba8959-f458-4263-b368-3f7c9b58c605"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"%", "//", "MatrixForm"}]], "Input",
+ CellChangeTimes->{{3.920593803413884*^9, 3.9205938054064207`*^9}},
+ CellLabel->"In[15]:=",ExpressionUUID->"fb996d7b-34b8-466f-92a9-c424f33361a4"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {
+      RowBox[{
+       RowBox[{"-", "1"}], "+", 
+       FractionBox[
+        RowBox[{"2", " ", "M", " ", "r"}], "\[CapitalSigma]"]}], "0", "0", 
+      RowBox[{"-", 
+       FractionBox[
+        RowBox[{"2", " ", "a", " ", "M", " ", "r", " ", 
+         SuperscriptBox[
+          RowBox[{"Sin", "[", "\[Theta]", "]"}], "2"]}], "\[CapitalSigma]"]}]},
+     {"0", 
+      FractionBox["\[CapitalSigma]", "\[CapitalDelta]"], "0", "0"},
+     {"0", "0", "\[CapitalSigma]", "0"},
+     {
+      RowBox[{"-", 
+       FractionBox[
+        RowBox[{"2", " ", "a", " ", "M", " ", "r", " ", 
+         SuperscriptBox[
+          RowBox[{"Sin", "[", "\[Theta]", "]"}], "2"]}], "\[CapitalSigma]"]}],
+       "0", "0", 
+      RowBox[{
+       SuperscriptBox[
+        RowBox[{"Sin", "[", "\[Theta]", "]"}], "2"], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         SuperscriptBox["a", "2"], "+", 
+         SuperscriptBox["r", "2"], "+", 
+         FractionBox[
+          RowBox[{"2", " ", 
+           SuperscriptBox["a", "2"], " ", "M", " ", "r", " ", 
+           SuperscriptBox[
+            RowBox[{"Sin", "[", "\[Theta]", "]"}], "2"]}], 
+          "\[CapitalSigma]"]}], ")"}]}]}
+    },
+    GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.920593805842372*^9},
+ CellLabel->
+  "Out[15]//MatrixForm=",ExpressionUUID->"8688d9d9-b2c2-439e-9c8b-\
+934531a040ca"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"D", "[", 
+    RowBox[{"gk", ",", "\[Theta]"}], "]"}], "/.", 
+   RowBox[{"{", 
+    RowBox[{"\[Theta]", "->", "theta"}], "}"}]}], "/.", 
+  RowBox[{"{", 
+   RowBox[{
+    TagBox[
+     StyleBox[
+      RowBox[{"Plus", "[", 
+       RowBox[{
+        RowBox[{"Power", "[", 
+         RowBox[{"r", ",", "2"}], "]"}], ",", 
+        RowBox[{"Times", "[", 
+         RowBox[{
+          RowBox[{"Power", "[", 
+           RowBox[{"a", ",", "2"}], "]"}], ",", 
+          RowBox[{"Power", "[", 
+           RowBox[{
+            RowBox[{"Cos", "[", "\\[Theta]", "]"}], ",", "2"}], "]"}]}], 
+         "]"}]}], "]"}],
+      ShowSpecialCharacters->False,
+      ShowStringCharacters->True,
+      NumberMarks->True],
+     FullForm], "->", "\[CapitalSigma]"}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.920593962970542*^9, 3.920593990658476*^9}, {
+  3.9205940978818827`*^9, 3.920594159951702*^9}},
+ CellLabel->"In[25]:=",ExpressionUUID->"2dde8b25-b013-419b-a4b2-f108253c96b5"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox[
+      RowBox[{"4", " ", 
+       SuperscriptBox["a", "2"], " ", "M", " ", "r", " ", 
+       RowBox[{"Cos", "[", "theta", "]"}], " ", 
+       RowBox[{"Sin", "[", "theta", "]"}]}], 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{
+         SuperscriptBox["r", "2"], "+", 
+         RowBox[{
+          SuperscriptBox["a", "2"], " ", 
+          SuperscriptBox[
+           RowBox[{"Cos", "[", "theta", "]"}], "2"]}]}], ")"}], "2"]], ",", 
+     "0", ",", "0", ",", 
+     RowBox[{
+      RowBox[{"-", 
+       FractionBox[
+        RowBox[{"4", " ", "a", " ", "M", " ", "r", " ", 
+         RowBox[{"Cos", "[", "theta", "]"}], " ", 
+         RowBox[{"Sin", "[", "theta", "]"}]}], 
+        RowBox[{
+         SuperscriptBox["r", "2"], "+", 
+         RowBox[{
+          SuperscriptBox["a", "2"], " ", 
+          SuperscriptBox[
+           RowBox[{"Cos", "[", "theta", "]"}], "2"]}]}]]}], "-", 
+      FractionBox[
+       RowBox[{"4", " ", 
+        SuperscriptBox["a", "3"], " ", "M", " ", "r", " ", 
+        RowBox[{"Cos", "[", "theta", "]"}], " ", 
+        SuperscriptBox[
+         RowBox[{"Sin", "[", "theta", "]"}], "3"]}], 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{
+          SuperscriptBox["r", "2"], "+", 
+          RowBox[{
+           SuperscriptBox["a", "2"], " ", 
+           SuperscriptBox[
+            RowBox[{"Cos", "[", "theta", "]"}], "2"]}]}], ")"}], "2"]]}]}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", 
+     RowBox[{"-", 
+      FractionBox[
+       RowBox[{"2", " ", 
+        SuperscriptBox["a", "2"], " ", 
+        RowBox[{"Cos", "[", "theta", "]"}], " ", 
+        RowBox[{"Sin", "[", "theta", "]"}]}], 
+       RowBox[{
+        SuperscriptBox["a", "2"], "-", 
+        RowBox[{"2", " ", "M", " ", "r"}], "+", 
+        SuperscriptBox["r", "2"]}]]}], ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", 
+     RowBox[{
+      RowBox[{"-", "2"}], " ", 
+      SuperscriptBox["a", "2"], " ", 
+      RowBox[{"Cos", "[", "theta", "]"}], " ", 
+      RowBox[{"Sin", "[", "theta", "]"}]}], ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", 
+       FractionBox[
+        RowBox[{"4", " ", "a", " ", "M", " ", "r", " ", 
+         RowBox[{"Cos", "[", "theta", "]"}], " ", 
+         RowBox[{"Sin", "[", "theta", "]"}]}], 
+        RowBox[{
+         SuperscriptBox["r", "2"], "+", 
+         RowBox[{
+          SuperscriptBox["a", "2"], " ", 
+          SuperscriptBox[
+           RowBox[{"Cos", "[", "theta", "]"}], "2"]}]}]]}], "-", 
+      FractionBox[
+       RowBox[{"4", " ", 
+        SuperscriptBox["a", "3"], " ", "M", " ", "r", " ", 
+        RowBox[{"Cos", "[", "theta", "]"}], " ", 
+        SuperscriptBox[
+         RowBox[{"Sin", "[", "theta", "]"}], "3"]}], 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{
+          SuperscriptBox["r", "2"], "+", 
+          RowBox[{
+           SuperscriptBox["a", "2"], " ", 
+           SuperscriptBox[
+            RowBox[{"Cos", "[", "theta", "]"}], "2"]}]}], ")"}], "2"]]}], ",",
+      "0", ",", "0", ",", 
+     RowBox[{
+      RowBox[{"2", " ", 
+       RowBox[{"Cos", "[", "theta", "]"}], " ", 
+       RowBox[{"Sin", "[", "theta", "]"}], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         SuperscriptBox["a", "2"], "+", 
+         SuperscriptBox["r", "2"], "+", 
+         FractionBox[
+          RowBox[{"2", " ", 
+           SuperscriptBox["a", "2"], " ", "M", " ", "r", " ", 
+           SuperscriptBox[
+            RowBox[{"Sin", "[", "theta", "]"}], "2"]}], 
+          RowBox[{
+           SuperscriptBox["r", "2"], "+", 
+           RowBox[{
+            SuperscriptBox["a", "2"], " ", 
+            SuperscriptBox[
+             RowBox[{"Cos", "[", "theta", "]"}], "2"]}]}]]}], ")"}]}], "+", 
+      RowBox[{
+       SuperscriptBox[
+        RowBox[{"Sin", "[", "theta", "]"}], "2"], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         FractionBox[
+          RowBox[{"4", " ", 
+           SuperscriptBox["a", "2"], " ", "M", " ", "r", " ", 
+           RowBox[{"Cos", "[", "theta", "]"}], " ", 
+           RowBox[{"Sin", "[", "theta", "]"}]}], 
+          RowBox[{
+           SuperscriptBox["r", "2"], "+", 
+           RowBox[{
+            SuperscriptBox["a", "2"], " ", 
+            SuperscriptBox[
+             RowBox[{"Cos", "[", "theta", "]"}], "2"]}]}]], "+", 
+         FractionBox[
+          RowBox[{"4", " ", 
+           SuperscriptBox["a", "4"], " ", "M", " ", "r", " ", 
+           RowBox[{"Cos", "[", "theta", "]"}], " ", 
+           SuperscriptBox[
+            RowBox[{"Sin", "[", "theta", "]"}], "3"]}], 
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{
+             SuperscriptBox["r", "2"], "+", 
+             RowBox[{
+              SuperscriptBox["a", "2"], " ", 
+              SuperscriptBox[
+               RowBox[{"Cos", "[", "theta", "]"}], "2"]}]}], ")"}], "2"]]}], 
+        ")"}]}]}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.920593965016212*^9, 3.920593980871978*^9}, 
+   3.920594103937099*^9, {3.920594134127433*^9, 3.920594160517394*^9}},
+ CellLabel->"Out[25]=",ExpressionUUID->"e34dedd2-68bc-459e-953a-23bc92b700a9"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FullForm", "[", "\[CapitalSigma]", "]"}]], "Input",
+ CellChangeTimes->{{3.920594082834154*^9, 3.920594092358251*^9}, {
+  3.920594141266127*^9, 3.920594145495224*^9}},
+ CellLabel->"In[24]:=",ExpressionUUID->"f76da4c4-fabf-4bec-a57f-6d6ce5dfff4f"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   RowBox[{"Plus", "[", 
+    RowBox[{
+     RowBox[{"Power", "[", 
+      RowBox[{"r", ",", "2"}], "]"}], ",", 
+     RowBox[{"Times", "[", 
+      RowBox[{
+       RowBox[{"Power", "[", 
+        RowBox[{"a", ",", "2"}], "]"}], ",", 
+       RowBox[{"Power", "[", 
+        RowBox[{
+         RowBox[{"Cos", "[", "\\[Theta]", "]"}], ",", "2"}], "]"}]}], "]"}]}],
+     "]"}],
+   ShowSpecialCharacters->False,
+   ShowStringCharacters->True,
+   NumberMarks->True],
+  FullForm]], "Output",
+ CellChangeTimes->{3.920594092937089*^9, 3.9205941459653788`*^9},
+ CellLabel->
+  "Out[24]//FullForm=",ExpressionUUID->"6ca4205f-5070-47e7-9395-59f14500a2db"]
+}, Open  ]]
+},
+WindowSize->{1387.5, 758.25},
+WindowMargins->{{Automatic, 0}, {Automatic, 0}},
+FrontEndVersion->"13.2 for Linux x86 (64-bit) (January 31, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"11585506-c6f1-471a-a6c3-8bd6ce50b352"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 215, 3, 29, "Input",ExpressionUUID->"350ea5f9-a15e-4edd-a5fb-197a4e69aac2"],
+Cell[CellGroupData[{
+Cell[798, 27, 246, 4, 32, "Input",ExpressionUUID->"11d4a345-9894-4077-8280-d8138f85ea2f"],
+Cell[1047, 33, 242, 5, 36, "Output",ExpressionUUID->"e311c2f3-84aa-4ff2-93a7-9c592d8343ba"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1326, 43, 472, 11, 32, "Input",ExpressionUUID->"aa6b94d7-d133-4ece-b911-140bb73beb6b"],
+Cell[1801, 56, 276, 7, 44, "Output",ExpressionUUID->"b2996df4-6bd7-4268-87f8-41df9576367f"]
+}, Open  ]],
+Cell[2092, 66, 330, 8, 32, "Input",ExpressionUUID->"ac5302e4-2523-4692-83a2-363be130ba35"],
+Cell[2425, 76, 416, 11, 32, "Input",ExpressionUUID->"a6791243-7fbf-4260-b862-5d89a52ad4de"],
+Cell[2844, 89, 426, 11, 32, "Input",ExpressionUUID->"6b57e3d1-85fd-4da4-9d40-f821b92ae8d1"],
+Cell[3273, 102, 264, 5, 32, "Input",ExpressionUUID->"1194a4a3-b37e-45a8-89bf-734b1bf53085"],
+Cell[3540, 109, 240, 4, 29, "Input",ExpressionUUID->"c10ad872-c16a-4f44-8a39-580117fef982"],
+Cell[3783, 115, 160, 3, 29, "Input",ExpressionUUID->"248ad072-06b8-42e7-9d61-0df9bba74185"],
+Cell[CellGroupData[{
+Cell[3968, 122, 213, 3, 29, "Input",ExpressionUUID->"1f7fc6a2-9ef0-43d9-a411-36fd00ae86c3"],
+Cell[4184, 127, 113186, 2086, 717, "Output",ExpressionUUID->"ae959e5b-33cf-40e3-8c38-630c36815548"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[117407, 2218, 629, 14, 29, "Input",ExpressionUUID->"b3e6ae9e-9b41-4956-bcbf-bb7b253f3425"],
+Cell[118039, 2234, 4740, 138, 116, "Output",ExpressionUUID->"018b8b28-685b-4a33-bada-47c4c93e79cf"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[122816, 2377, 248, 5, 29, "Input",ExpressionUUID->"d570479b-e19b-4e6e-93ee-2a41d1869118"],
+Cell[123067, 2384, 1938, 59, 62, "Output",ExpressionUUID->"55e6f705-b4ae-42cb-96e5-9b64c6c9d355"]
+}, Open  ]],
+Cell[125020, 2446, 621, 17, 32, "Input",ExpressionUUID->"bb01890d-8b52-42b7-b7d2-f57739f5756f"],
+Cell[CellGroupData[{
+Cell[125666, 2467, 1939, 55, 33, "Input",ExpressionUUID->"bab8162a-4dc3-4208-8786-24db87017f1f"],
+Cell[127608, 2524, 2737, 83, 60, "Output",ExpressionUUID->"4cba8959-f458-4263-b368-3f7c9b58c605"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[130382, 2612, 206, 3, 29, "Input",ExpressionUUID->"fb996d7b-34b8-466f-92a9-c424f33361a4"],
+Cell[130591, 2617, 1746, 50, 133, "Output",ExpressionUUID->"8688d9d9-b2c2-439e-9c8b-934531a040ca"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[132374, 2672, 995, 29, 29, "Input",ExpressionUUID->"2dde8b25-b013-419b-a4b2-f108253c96b5"],
+Cell[133372, 2703, 5215, 146, 166, "Output",ExpressionUUID->"e34dedd2-68bc-459e-953a-23bc92b700a9"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[138624, 2854, 269, 4, 29, "Input",ExpressionUUID->"f76da4c4-fabf-4bec-a57f-6d6ce5dfff4f"],
+Cell[138896, 2860, 670, 21, 48, "Output",ExpressionUUID->"6ca4205f-5070-47e7-9395-59f14500a2db"]
+}, Open  ]]
+}
+]
+*)
+
