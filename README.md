@@ -1,4 +1,4 @@
-# gwchaos
+# Detecting Signature of Chaos in Gravitational Waves from LISA 
 Python code to simulate Spinning bodies in Kerr Black Hole using MPD Equation and find Chaos in GW emitted by the secondary bodies
 
 This code is still in the development Phase. It is written using Python mainly but I am also trying my Hands on Julia for speed.
