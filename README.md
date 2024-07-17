@@ -5,7 +5,7 @@ This code is still in the development Phase. It is written using Python mainly b
 
 The main code can be found in Hamiltonian_MPD.ipynb. This contain code to calculate the solution of MPD Equation of two spinning Particle in Kerr Geometry.
 
-The next thing is to Plot Poincare section and the Lyapunov Exponent. Currently, the code can do these both. 
+The next thing is to Plot Poincare section and the Lyapunov Exponent. Currently, the code can do these both.
 
 The next stage is to Incorporate Gravitational Waves in this system and look for chaos using ML tools. 
 
